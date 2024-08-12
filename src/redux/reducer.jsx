@@ -27,6 +27,8 @@ const initialState = {
   body: {
     class: "",
   },
+  loader: false,
+  products: [],
 };
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
@@ -35,7 +37,15 @@ export default function reducer(state = initialState, action) {
     case "ThemeChanger":
       state = payload;
       return state;
-      break;
+
+    case "GET_PRODUCTS_REQUEST":
+      return { ...state, loader: true };
+
+    case "GET_PRODUCTS_SUCCESS":
+      return { ...state, loader: false, products: payload };
+
+    case "GET_PRODUCTS_FAILURE":
+      return { ...state, loader: false };
 
     default:
       return state;

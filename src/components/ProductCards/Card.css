@@ -1,0 +1,146 @@
+.cardMain {
+  background: linear-gradient(
+    45deg,
+    #959595 0%,
+    #0d0d0d 46%,
+    #010101 50%,
+    #0a0a0a 53%,
+    #4e4e4e 76%,
+    #383838 87%,
+    #1b1b1b 100%
+  );
+  width: 100%;
+  height: 100%;
+  padding: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cardMain .card {
+  width: 33%;
+  border: none;
+  margin: 20px;
+  height: 100%;
+  outline: none;
+  padding: 20px;
+  border-radius: 20px;
+  background: repeating-radial-gradient(
+    ellipse farthest-corner at top left,
+    #1b0087 54%,
+    #bdbdbd 97%
+  );
+}
+.cardMain .card .price {
+  top: 0%;
+  right: 5%;
+  width: 120px;
+  height: 50px;
+  color: #fff;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  position: absolute;
+  background-color: #003cff;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.cardMain .card .price p span {
+  color: #fff;
+  font-size: 24px;
+  margin-right: 5px;
+}
+.cardMain .card2 {
+  background: repeating-radial-gradient(
+    ellipse farthest-corner at top left,
+    #870000 54%,
+    #bdbdbd 97%
+  );
+}
+.cardMain .card3 {
+  background: repeating-radial-gradient(
+    ellipse farthest-corner at top left,
+    #00876c 54%,
+    #bdbdbd 97%
+  );
+}
+.cardMain .card .productImage {
+  width: 100%;
+  height: 65%;
+}
+.cardMain .card .productImage img {
+  width: 100%;
+  height: 100%;
+}
+.cardMain .card .productInfo {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  margin-top: 10px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.cardMain .card .productInfo .basic {
+  width: 55%;
+  height: 100%;
+  color: #fff;
+  padding: 10px;
+}
+.productName {
+  width: 100%;
+  height: 50px;
+  color: #fff;
+}
+.productName h3 {
+  color: #fff;
+  font-size: 30px;
+}
+.productdes {
+  width: 100%;
+  height: 100px;
+}
+.productdes p {
+  color: #fff;
+  font-size: 14px;
+  text-align: justify;
+}
+.ranking {
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+}
+.divider {
+  width: 2px;
+  height: 210px;
+  background-color: aliceblue;
+}
+.other {
+  width: 40%;
+  height: 100%;
+  padding: 10px;
+  color: #fff;
+}
+.styleSame h4 {
+  height: 100%;
+  font-size: 22px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.styleSame p {
+  font-size: 12px;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn button {
+  border: none;
+  width: 150px;
+  height: 40px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 20px;
+}
