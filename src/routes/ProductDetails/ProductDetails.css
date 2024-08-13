@@ -1,0 +1,30 @@
+.main {
+  display: flex;
+  padding: 30px;
+  align-items: center;
+  justify-content: space-around;
+  background: linear-gradient(to right, #000f9e 0%, #000000 59%);
+}
+.main .image {
+  width: 40%;
+  height: 100%;
+  border-radius: 20px;
+  background: repeating-radial-gradient(
+    ellipse farthest-corner at top left,
+    #1b0087 54%,
+    #bdbdbd 97%
+  );
+  box-shadow: 0 4px 8px rgb(255, 255, 255);
+}
+.main .image img {
+  width: 75%;
+  height: 100%;
+  margin-left: 60px;
+}
+.main .details {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  margin-left: 34px;
+  flex-direction: column;
+}

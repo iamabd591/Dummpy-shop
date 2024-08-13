@@ -20,10 +20,10 @@ function Card() {
   const products = useSelector((state) => state.products);
 
   useEffect(() => {
-    console.log("Use Effect");
+    // console.log("Use Effect");
     dispatch(getProducts());
   }, [dispatch]);
-  console.log(products);
+  // console.log(products);
 
   return (
     <div className="cardMain">

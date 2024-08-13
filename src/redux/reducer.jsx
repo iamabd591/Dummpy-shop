@@ -29,6 +29,7 @@ const initialState = {
   },
   loader: false,
   products: [],
+  productById: {},
 };
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
@@ -46,6 +47,9 @@ export default function reducer(state = initialState, action) {
 
     case "GET_PRODUCTS_FAILURE":
       return { ...state, loader: false };
+
+    case "GET_PRODUCTS_REQUEST_BY_ID":
+      return { ...state, loader: true };
 
     default:
       return state;
