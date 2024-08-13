@@ -14,7 +14,7 @@ export const getProducts = (_) => async (dispatch) => {
     const products = await getRequest({
       url: "https://dummyjson.com/products",
     });
-    console.log(products)
+    // console.log(products)
     dispatch(success({ type: "GET_PRODUCTS_SUCCESS", payload: products }));
   } catch (error) {
     console.log(error);
