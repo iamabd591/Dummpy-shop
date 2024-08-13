@@ -1,14 +1,13 @@
 import { Fragment } from "react";
+import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar/NavBar";
-import Products from "./Products";
 
 function App() {
   return (
-    <Fragment>
+    <>
       <NavBar />
-      <Products />
-    </Fragment>
+      <Outlet />
+    </>
   );
 }
-
 export default App;

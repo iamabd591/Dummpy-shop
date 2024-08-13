@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
-import { getProducts } from "../redux/action";
-import Card from "../components/ProductCards/Card";
+import { getProducts } from "../../redux/action";
+import Card from "../../components/ProductCards/Card";
 import { useDispatch, useSelector } from "react-redux";
 
 function Products() {

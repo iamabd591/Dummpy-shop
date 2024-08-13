@@ -1,8 +1,8 @@
 import "./Card.css";
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getProducts } from "../../redux/action";
 import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { getProducts } from "../../redux/action";
+import { useSelector, useDispatch } from "react-redux";
 
 function Card() {
   const gradients = [
@@ -40,7 +40,7 @@ function Card() {
             </p>
           </div>
           <div className="productImage">
-            <Link to={`../../pages/ProductDetails/${item.id}`} target="_blank" rel="">
+            <Link to={`product_detail/${item.id}`}>
               <img src="./watch.png" alt={item.title} />
             </Link>
           </div>
