@@ -27,7 +27,7 @@ function ProductDetails() {
     <>
       <div className="main">
         <div className="image">
-          <img src="../watch.png" alt="alt" />
+          <img src={ProdcutById.thumbnail} alt="alt" />
         </div>
         <div className="details">
           <div>
@@ -110,8 +110,30 @@ function ProductDetails() {
             <h4>Product SKU</h4>
             <span>{ProdcutById.sku}</span>
           </div>
+          <div className="moreInfo">
+            <h4>Return Policy</h4>
+            <span>{ProdcutById.returnPolicy}</span>
+          </div>
         </div>
       </div>
+      <div className="reviews">
+            <h4>Reviews</h4>
+            {ProdcutById?.reviews?.map((review, index) => (
+              <div key={index} className="review">
+                <h3>{review.reviewerName}</h3>
+                <p>
+                  <strong>Rating:</strong> {review.rating} out of 5
+                </p>
+                <p>
+                  <strong>Comment:</strong> {review.comment}
+                </p>
+                <p>
+                  <strong>Date:</strong>{" "}
+                  {new Date(review.date).toLocaleDateString()}
+                </p>
+              </div>
+            ))}
+          </div>
     </>
   );
 }

@@ -33,7 +33,7 @@ function Card() {
           </div>
           <div className="productImage">
             <Link to={`product_detail/${item.id}`}>
-              <img src="./watch.png" alt={item.title} />
+              <img src={item.thumbnail} alt={item.title} />
             </Link>
           </div>
           <div className="productInfo">
