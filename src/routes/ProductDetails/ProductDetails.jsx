@@ -1,12 +1,20 @@
 import "./ProductDetails.css";
-import React, { useEffect } from "react";
+import Rating from "react-rating";
+import { useParams } from "react-router";
+import React, { useEffect, useState } from "react";
 import { getProductsById } from "../../redux/action";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+
 function ProductDetails() {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const [rating, setRating] = useState(0);
   const ProdcutById = useSelector((state) => state.productById);
+
+  const handleRating = (rating) => {
+    setRating(rating);
+  };
 
   useEffect(() => {
     if (!id) {
@@ -43,11 +51,17 @@ function ProductDetails() {
           <div className="rating">
             <div>
               {" "}
-              <h2>Rating</h2>
+              <h2>Rating:</h2>
             </div>
             <div>
               {" "}
-              <span>{ProdcutById.rating}</span>
+              <Rating
+                emptySymbol={<AiOutlineStar size={30} color="#ffd700" />}
+                fullSymbol={<AiFillStar size={30} color="#ffd700" />}
+                initialRating={ProdcutById.rating}
+                onChange={handleRating}
+              />
+              <span></span>
             </div>
           </div>
 
