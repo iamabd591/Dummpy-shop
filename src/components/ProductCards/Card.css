@@ -31,8 +31,7 @@
     ellipse farthest-corner at top left,
     #1b0087 54%,
     #bdbdbd 97%
-    );
-    
+  );
 }
 .card:hover {
   transform: translateY(-5px);
@@ -172,12 +171,14 @@
 }
 .ranking h4 {
   color: #fff;
+  font-size: 12px;
   font-weight: 900;
 }
 
-.ranking h4 span {
+/* .ranking h4 span {
+  
   margin-left: 5px;
-}
+} */
 .divider {
   width: 2px;
   height: 270px;

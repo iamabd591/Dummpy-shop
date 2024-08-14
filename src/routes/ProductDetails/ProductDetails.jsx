@@ -55,13 +55,14 @@ function ProductDetails() {
             </div>
             <div>
               {" "}
-              <Rating
-                emptySymbol={<AiOutlineStar size={30} color="#ffd700" />}
-                fullSymbol={<AiFillStar size={30} color="#ffd700" />}
-                initialRating={ProdcutById.rating}
-                onChange={handleRating}
-              />
-              <span></span>
+              <span>
+                <Rating
+                  emptySymbol={<AiOutlineStar size={30} color="#ffd700" />}
+                  fullSymbol={<AiFillStar size={30} color="#ffd700" />}
+                  initialRating={ProdcutById.rating}
+                  onChange={handleRating}
+                />
+              </span>
             </div>
           </div>
 

@@ -1,22 +1,14 @@
 import "./Card.css";
+import Rating from "react-rating";
 import { Link } from "react-router-dom";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { getProducts } from "../../redux/action";
 import { useSelector, useDispatch } from "react-redux";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 function Card() {
-  const gradients = [
-    "repeating-radial-gradient(ellipse farthest-corner at top left,#1b0087 54%,#bdbdbd 97%)",
-    "background: repeating-radial-gradient(ellipse farthest-corner at top left,#870000 54%,#bdbdbd 97%)",
-    "background: repeating-radial-gradient(ellipse farthest-corner at top left,#00876c 54%,#bdbdbd 97%)",
-    "background: repeating-radial-gradient(ellipse farthest-corner at top left,#5c0087 54%,#bdbdbd 97%)",
-    "background: repeating-radial-gradient(ellipse farthest-corner at top left,#004f87 54%,#bdbdbd 97%)",
-    "background: repeating-radial-gradient(ellipse farthest-corner at top left, #108700 54%, #bdbdbd 97%)",
-    "background: repeating-radial-gradient(ellipse farthest-corner at top left,#e1e409 54%,#bdbdbd 97%)",
-    "background: repeating-radial-gradient(ellipse farthest-corner at top left,#fb540c 54%,#bdbdbd 97%)",
-    "background: repeating-radial-gradient(ellipse farthest-corner at top left,#ff0b85 54%,#bdbdbd 97%)",
-  ];
   const dispatch = useDispatch();
+  const [rating, setRating] = useState(0);
   const products = useSelector((state) => state.products);
 
   useEffect(() => {
@@ -25,14 +17,14 @@ function Card() {
   }, [dispatch]);
   // console.log(products);
 
+  const handleRating = (rating) => {
+    setRating(rating);
+  };
+
   return (
     <div className="cardMain">
       {products?.products?.map((item, ind) => (
-        <div
-          className="card"
-          key={ind}
-          style={{ background: gradients[ind % gradients.length] }}
-        >
+        <div className="card" key={ind}>
           <div className="price">
             <p>
               <span>$</span>
@@ -54,7 +46,15 @@ function Card() {
               </div>
               <div className="ranking">
                 <h4>
-                  Rating:<span>{item.rating}</span>
+                  <span>
+                    {" "}
+                    <Rating
+                      emptySymbol={<AiOutlineStar size={30} color="#ffd700" />}
+                      fullSymbol={<AiFillStar size={30} color="#ffd700" />}
+                      initialRating={item.rating}
+                      onChange={handleRating}
+                    />
+                  </span>
                 </h4>
               </div>
             </div>
