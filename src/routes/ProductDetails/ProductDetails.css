@@ -25,6 +25,95 @@
   width: 50%;
   height: 100%;
   display: flex;
+  padding-top: 0px;
   margin-left: 34px;
   flex-direction: column;
+}
+
+.main .details h2 {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 900;
+}
+.main .details .description h3 {
+  width: 700px;
+  color: #fff;
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: justify;
+}
+.main .details .price {
+  gap: 20px;
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+  justify-content: left;
+}
+.main .details .price div h2 {
+  font-size: 26px;
+}
+.main .details .price div span {
+  color: #fff;
+  font-size: 20px;
+}
+.main .details .rating {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.main .details .rating h2 {
+  color: #fff;
+  font-size: 26px;
+}
+.main .details .proDetails {
+  gap: 15px;
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+  justify-content: left;
+}
+.main .details .proDetails div div h4 {
+  width: 180px;
+  color: #fff;
+  font-weight: 600;
+}
+.main .details .proDetails div {
+  width: 200px;
+}
+.main .details .proDetails div div span {
+  color: #fff;
+  font-size: 24px;
+  text-transform: capitalize;
+}
+.main .details .btn {
+  gap: 20px;
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+  justify-content: left;
+}
+.main .details .btn button {
+  width: 230px;
+  height: 60px;
+  color: #fff;
+  font-size: 20px;
+  transition: all 0.5s ease;
+  background-color: #000f9e;
+}
+.main .details .btn button:hover {
+  color: #000f9e;
+  background-color: #ffffff;
+}
+
+.main .details .moreInfo {
+  padding-top: 30px;
+}
+.main .details .moreInfo h4 {
+  color: #fff;
+  font-size: 26px;
+}
+.main .details .moreInfo span {
+  color: #fff;
+  font-size: 18px;
 }

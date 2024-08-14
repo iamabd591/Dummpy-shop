@@ -28,9 +28,9 @@ export const getProductsById = (id) => async (dispatch) => {
     const productById = await getRequestById({
       url: `https://dummyjson.com/products/${id}`,
     });
-    dispatch(success({ type: "GET_PRODUCTS_SUCCESS", payload: productById }));
+    dispatch(success({ type: "GET_PRODUCTS_SUCCESS_BY_ID", payload: productById }));
   } catch (error) {
     console.log(error);
-    dispatch(reject({ type: "GET_PRODUCTS_FAILURE", error: error }));
+    dispatch(reject({ type: "GET_PRODUCTS_FAILURE_BY_ID", error: error }));
   }
 };

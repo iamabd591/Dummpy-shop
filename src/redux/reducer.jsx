@@ -51,6 +51,12 @@ export default function reducer(state = initialState, action) {
     case "GET_PRODUCTS_REQUEST_BY_ID":
       return { ...state, loader: true };
 
+    case "GET_PRODUCTS_SUCCESS_BY_ID":
+      return { ...state, loader: false, productById: payload };
+
+    case "GET_PRODUCTS_FAILURE_BY_ID":
+      return { ...state, loader: false };
+
     default:
       return state;
   }

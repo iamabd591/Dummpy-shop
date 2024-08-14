@@ -12,7 +12,8 @@ export const getRequest = async ({ url }) => {
 };
 export const getRequestById = async ({ url }) => {
   try {
-    const response = await axios.get({ url });
+    const response = await axios.get(url);
+    // console.log(response.data);
     if (response.status == 200) {
       return response.data;
     }
