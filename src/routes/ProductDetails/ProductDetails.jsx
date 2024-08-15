@@ -11,6 +11,7 @@ function ProductDetails() {
   const dispatch = useDispatch();
   const [rating, setRating] = useState(0);
   const ProdcutById = useSelector((state) => state.productById);
+  const loader = useSelector((state) => state.loader);
 
   const handleRating = (rating) => {
     setRating(rating);
@@ -22,19 +23,23 @@ function ProductDetails() {
     }
     dispatch(getProductsById(id));
   }, [dispatch, id]);
+
+  useEffect(() => {
+    console.log(loader);
+  }, [loader]);
   console.log(ProdcutById);
   return (
     <>
       <div className="main">
         <div className="image">
-          <img src={ProdcutById.thumbnail} alt="alt" />
+          <img src={ProdcutById?.thumbnail} alt="alt" />
         </div>
         <div className="details">
           <div>
-            <h2>{ProdcutById.title}</h2>
+            <h2>{ProdcutById?.title}</h2>
           </div>
           <div className="description">
-            <h3>{ProdcutById.description}</h3>
+            <h3>{ProdcutById?.description}</h3>
             <p></p>
           </div>
 
@@ -43,7 +48,7 @@ function ProductDetails() {
               <h2>Price:</h2>
             </div>
             <div>
-              <span>{ProdcutById.price}</span>
+              <span>{ProdcutById?.price}</span>
             </div>
             {/* <div> <span>{ProdcutById.discountPercentage}</span></div> */}
           </div>
@@ -59,8 +64,9 @@ function ProductDetails() {
                 <Rating
                   emptySymbol={<AiOutlineStar size={30} color="#ffd700" />}
                   fullSymbol={<AiFillStar size={30} color="#ffd700" />}
-                  initialRating={ProdcutById.rating}
+                  initialRating={ProdcutById?.rating}
                   onChange={handleRating}
+                  readonly={true}
                 />
               </span>
             </div>
@@ -72,7 +78,7 @@ function ProductDetails() {
                 <h4>Catgory</h4>
               </div>
               <div>
-                <span>{ProdcutById.category}</span>
+                <span>{ProdcutById?.category}</span>
               </div>
             </div>
 
@@ -82,14 +88,14 @@ function ProductDetails() {
               </div>
               <div>
                 {" "}
-                <span>{ProdcutById.brand}</span>
+                <span>{ProdcutById?.brand}</span>
               </div>
             </div>
 
             <div>
               <div>
                 <h4>Stock</h4>
-                <span>{ProdcutById.stock}</span>
+                <span>{ProdcutById?.stock}</span>
               </div>
             </div>
           </div>
@@ -99,41 +105,50 @@ function ProductDetails() {
           </div>
           <div className="moreInfo">
             <h4>Warrenty</h4>
-            <span>{ProdcutById.warrantyInformation}</span>
+            <span>{ProdcutById?.warrantyInformation}</span>
           </div>
 
           <div className="moreInfo">
             <h4>Shippment Time</h4>
-            <span>{ProdcutById.shippingInformation}</span>
+            <span>{ProdcutById?.shippingInformation}</span>
           </div>
           <div className="moreInfo">
             <h4>Product SKU</h4>
-            <span>{ProdcutById.sku}</span>
+            <span>{ProdcutById?.sku}</span>
           </div>
           <div className="moreInfo">
             <h4>Return Policy</h4>
-            <span>{ProdcutById.returnPolicy}</span>
+            <span>{ProdcutById?.returnPolicy}</span>
           </div>
         </div>
       </div>
       <div className="reviews">
-            <h4>Reviews</h4>
-            {ProdcutById?.reviews?.map((review, index) => (
-              <div key={index} className="review">
-                <h3>{review.reviewerName}</h3>
-                <p>
-                  <strong>Rating:</strong> {review.rating} out of 5
-                </p>
-                <p>
-                  <strong>Comment:</strong> {review.comment}
-                </p>
-                <p>
-                  <strong>Date:</strong>{" "}
-                  {new Date(review.date).toLocaleDateString()}
-                </p>
-              </div>
-            ))}
+        <hr></hr>
+        <h4>Reviews</h4>
+        {ProdcutById?.reviews?.map((review, index) => (
+          <div key={index} className="review">
+            <h3>{review?.reviewerName}</h3>
+            <p>
+              <strong>Rating:</strong>
+              <Rating
+                className="reviewRating"
+                emptySymbol={<AiOutlineStar size={30} color="#ffd700" />}
+                fullSymbol={<AiFillStar size={30} color="#ffd700" />}
+                initialRating={review?.rating}
+                onChange={handleRating}
+                readonly={true}
+              />
+            </p>
+            <p>
+              <strong>Comment:</strong> {review.comment}
+            </p>
+            <p>
+              <strong>Date:</strong>{" "}
+              {new Date(review?.date).toLocaleDateString()}
+            </p>
           </div>
+        ))}
+      </div>
     </>
   );
 }

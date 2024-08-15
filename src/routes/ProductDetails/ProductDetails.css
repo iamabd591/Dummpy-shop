@@ -72,12 +72,13 @@
   justify-content: left;
 }
 .main .details .proDetails div div h4 {
-  width: 180px;
+  width: 10px;
   color: #fff;
   font-weight: 600;
 }
 .main .details .proDetails div {
-  width: 200px;
+  width: 300px;
+  height: auto;
 }
 .main .details .proDetails div div span {
   color: #fff;
@@ -114,4 +115,34 @@
 .main .details .moreInfo span {
   color: #fff;
   font-size: 18px;
+}
+
+.reviews {
+  background: linear-gradient(to right, #000f9e 0%, #000000 59%);
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding: 20px;
+}
+.reviews h4 {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.reviews .review h3 {
+  color: #fff316;
+  font-size: 36px;
+  padding-top: 10px;
+}
+.reviews .review p {
+  color: #fff;
+  font-size: 18px;
+}
+hr {
+  height: 2px;
+  color: #fff;
+}
+.reviews .review p .reviewRating {
+  font-size: 14px;
 }

@@ -53,6 +53,7 @@ function Card() {
                       fullSymbol={<AiFillStar size={30} color="#ffd700" />}
                       initialRating={item.rating}
                       onChange={handleRating}
+                      readonly={true}
                     />
                   </span>
                 </h4>
