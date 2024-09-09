@@ -4,9 +4,9 @@ import App from "./pages/App.jsx";
 import store from "./redux/store.jsx";
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom/client";
-import Products from "./routes/Products/Products.jsx";
+import Products from "./pages/Home/index.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ProductDetails from "./routes/ProductDetails/ProductDetails.jsx";
+import ProductDetails from "./pages/ProductDetails/ProductDetails.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.Fragment>

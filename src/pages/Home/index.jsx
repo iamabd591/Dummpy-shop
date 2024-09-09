@@ -9,7 +9,7 @@ function Products() {
   const product = useSelector((state) => state.products);
 
   useEffect(() => {
-    console.log(product);
+    // console.log(product);
     dispatch(getProducts());
   }, []);
   return (
