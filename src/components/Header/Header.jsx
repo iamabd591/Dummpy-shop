@@ -5,13 +5,22 @@ import {
   FaYoutube,
   FaInstagramSquare,
 } from "react-icons/fa";
-import { IoIosArrowDown } from "react-icons/io";
-import { CiShoppingCart } from "react-icons/ci";
+import {
+  CiHeart,
+  CiUser,
+  CiLocationOn,
+  CiHeadphones,
+  CiShoppingCart,
+  CiSearch,
+} from "react-icons/ci";
+import {
+  IoIosGitCompare,
+  IoMdHelpCircleOutline,
+  IoIosArrowDown,
+} from "react-icons/io";
+import {} from "react-icons/io";
 import { FaXTwitter } from "react-icons/fa6";
-import { CiSearch } from "react-icons/ci";
-import { CgProfile } from "react-icons/cg";
-import { CiHeart } from "react-icons/ci";
-import { CiUser } from "react-icons/ci";
+import { BiPhoneCall } from "react-icons/bi";
 import React from "react";
 import "./Header.css";
 const Header = () => {
@@ -96,15 +105,58 @@ const Header = () => {
           </p>
         </div>
       </div>
-
-      {/* <div className="navlinks">
-        <a href="">Home</a>
-        <a href="">Product</a>
-        <a href="">Contact</a>
-        <a href="">Support</a>
-        <a href="">Sign In</a>
-        <a href="">Sign Up</a>
-      </div> */}
+      <div className="header-nav">
+        <div className="user-nav">
+          <ul className="user-nav-list">
+            <li href="">
+              <p className="category">
+                ALL Category
+                <IoIosArrowDown />
+              </p>
+            </li>
+            <li href="">
+              <p>
+                <span>
+                  <CiLocationOn />
+                </span>
+                Track Order
+              </p>
+            </li>
+            <li href="">
+              <p>
+                <span>
+                  <IoIosGitCompare />
+                </span>
+                Compare
+              </p>
+            </li>
+            <li href="">
+              <p>
+                <span>
+                  <CiHeadphones />
+                </span>
+                Customer Support
+              </p>
+            </li>
+            <li href="">
+              <p>
+                <span>
+                  <IoMdHelpCircleOutline />
+                </span>
+                Need Help
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div className="help">
+          <p>
+            <span>
+              <BiPhoneCall />
+            </span>
+            +92 123 45 6789
+          </p>
+        </div>
+      </div>
     </>
   );
 };

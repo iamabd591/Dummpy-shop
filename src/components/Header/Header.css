@@ -1,8 +1,8 @@
 * {
   margin: 0px;
   padding: 0px;
-  font-family: sans-serif;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 .header {
@@ -10,8 +10,8 @@
   color: #fff;
   display: flex;
   align-items: center;
-  padding: 40px 30px 30px 30px;
   background-color: #1b6392;
+  padding: 40px 30px 30px 30px;
   justify-content: space-around;
 }
 .header .text p {
@@ -49,8 +49,8 @@
   color: #fff;
   display: flex;
   align-items: center;
-  padding: 40px 30px 30px 30px;
   background-color: #1b6392;
+  padding: 40px 30px 30px 30px;
   justify-content: space-around;
 }
 .header-lower .logo {
@@ -63,7 +63,6 @@
 .header-lower .serach-bar {
   width: 40%;
   position: relative;
-  /* border: 1px solid #000; */
 }
 .header-lower .serach-bar .product-search {
   width: 100%;
@@ -75,57 +74,62 @@
 .serach-bar button {
   top: 0px;
   right: 10px;
-  background: transparent;
-  font-size: 30px;
-  position: absolute;
   border: none;
+  font-size: 30px;
   cursor: pointer;
+  position: absolute;
+  background: transparent;
 }
 .header-lower .user-icons {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .header-lower .user-icons p {
+  cursor: pointer;
   font-size: 30px;
   margin-right: 10px;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.user-nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ul li {
+  list-style: none;
+  margin-right: 10px;
+}
+ul li p {
+  margin: 5px;
+  padding: 5px;
   cursor: pointer;
+  font-size: 16px;
+  display: inline-block;
 }
 
-.navBar {
-  width: 100%;
-  height: 100px;
-  background: linear-gradient(to right, #000f9e 0%, #000000 59%);
-}
-.navBar nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 16px;
-}
-.navBar nav .logo {
-  width: 25%;
-  height: auto;
-  padding: 10px 24px;
-}
-.navBar nav .logo a h3 {
-  font-size: 25px;
-  font-weight: 600;
-  cursor: pointer;
-  color: #ffffff;
-}
-.navBar nav .logo a h3 span {
-  font-size: 40px;
+ul li p span {
+  font-size: 20px;
+  gap: 10px;
+  margin-left: 5px;
   cursor: pointer;
 }
-.navBar .navlinks {
-  padding: 18px 26px;
+.header-nav .user-nav .user-nav-list .category {
+  background: #dadada;
+  padding: 10px;
+  margin-top: 12px;
 }
-.navBar .navlinks a {
-  color: #fff;
-  padding: 12px;
-  font-size: 18px;
-  font-weight: 500;
-  margin-right: 20px;
+.header-nav .help p {
+  font-size: 16px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.header-nav .help p span {
+  font-size: 20px;
+  cursor: pointer;
 }
