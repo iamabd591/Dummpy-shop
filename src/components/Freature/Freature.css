@@ -1,0 +1,16 @@
+.freature-main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+.freature-main .freature-left {
+  display: flex;
+  width: 60%;
+  height: 200px;
+  border: 1px solid #000;
+}
+.left-img img {
+  height: 40px;
+  width: 30px;
+}
