@@ -1,0 +1,131 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.header {
+  height: 50px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 40px 30px 30px 30px;
+  background-color: #1b6392;
+  justify-content: space-around;
+}
+.header .text p {
+  font-size: 15px;
+}
+.header-right {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.header-right .header-iocns p {
+  font-size: 15px;
+  margin-right: 5px;
+}
+.header-right .header-iocns p span {
+  margin: 10px;
+  cursor: pointer;
+}
+.header-right .divider {
+  height: 15px;
+  width: 1px;
+  background-color: #fff;
+}
+.header-languages {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.header-languages div p {
+  margin-right: 20px;
+}
+
+.header-lower {
+  height: 80px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 40px 30px 30px 30px;
+  background-color: #1b6392;
+  justify-content: space-around;
+}
+.header-lower .logo {
+  width: 15%;
+  height: auto;
+}
+.header-lower .logo img {
+  width: 80%;
+}
+.header-lower .serach-bar {
+  width: 40%;
+  position: relative;
+  /* border: 1px solid #000; */
+}
+.header-lower .serach-bar .product-search {
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+}
+.serach-bar button {
+  top: 0px;
+  right: 10px;
+  background: transparent;
+  font-size: 30px;
+  position: absolute;
+  border: none;
+  cursor: pointer;
+}
+.header-lower .user-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-lower .user-icons p {
+  font-size: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.navBar {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to right, #000f9e 0%, #000000 59%);
+}
+.navBar nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+}
+.navBar nav .logo {
+  width: 25%;
+  height: auto;
+  padding: 10px 24px;
+}
+.navBar nav .logo a h3 {
+  font-size: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #ffffff;
+}
+.navBar nav .logo a h3 span {
+  font-size: 40px;
+  cursor: pointer;
+}
+.navBar .navlinks {
+  padding: 18px 26px;
+}
+.navBar .navlinks a {
+  color: #fff;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-right: 20px;
+}
