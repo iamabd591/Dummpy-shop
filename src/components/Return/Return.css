@@ -1,0 +1,38 @@
+.return {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  padding: 12px 14px;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+.return .return-child {
+  display: flex;
+  padding: 20px;
+  width: 315px;
+  align-items: center;
+  border: 1px solid #e3e0e0;
+  justify-content: space-around;
+}
+.return .return-child .return-icon {
+  width: 30%;
+  height: 100%;
+}
+.return .return-child .return-icon span {
+  font-size: 50px;
+}
+.return .return-child .return-info {
+  width: 70%;
+  height: 100%;
+}
+.return .return-child .return-info h5 {
+  padding-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.return .return-child .return-info p {
+  font-size: 14px;
+  color: #656565;
+}
