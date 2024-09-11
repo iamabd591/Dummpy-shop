@@ -1,9 +1,9 @@
 .freature-main {
   width: 100%;
   display: flex;
-  padding: 15px 35px 15px 35px;
   background: #fff;
   align-items: center;
+  padding: 15px 35px 15px 35px;
   justify-content: space-around;
 }
 .freature-main .freature-left {
@@ -11,6 +11,7 @@
   display: flex;
   padding: 40px;
   height: 400px;
+  border-radius: 8px;
   background-color: #ececec;
 }
 .left-img {
@@ -76,13 +77,14 @@
   width: 30%;
 }
 .right-top-main {
+  height: 200px;
+  padding: 20px;
   display: flex;
+  position: relative;
+  border-radius: 8px;
   align-items: center;
   justify-content: center;
   background-color: #000;
-  height: 200px;
-  padding: 20px;
-  position: relative;
 }
 .right-top-text h3 {
   font-size: 16px;
@@ -132,13 +134,14 @@
   background-color: #ffe600;
 }
 .left-top-main {
+  padding: 20px;
+  height: 200px;
   display: flex;
+  position: relative;
+  border-radius: 8px;
   align-items: center;
   justify-content: center;
   background-color: #ececec;
-  height: 200px;
-  padding: 20px;
-  position: relative;
 }
 .left-top-text h3 {
   font-size: 22px;
