@@ -15,7 +15,7 @@ const Freature = () => {
               for $2 USD
             </p>
             <button>
-              Shop Now
+              SHOP NOW
               <span>
                 <IoIosArrowRoundForward />
               </span>
@@ -24,10 +24,49 @@ const Freature = () => {
           <div className="left-img">
             <img src="./watch.png" alt="watch" />
           </div>
+          <div className="price">
+            <span>$200</span>
+          </div>
         </div>
         <div className="freature-right">
-          <div className="freatur-right-top"></div>
-          <div className="freatur-right-bottom"></div>
+          <div className="freature-right-top">
+            <div className="right-top-main">
+              <div className="right-top-text">
+                <h3>Summer Sales</h3>
+                <h4>New Google Pixel 6 Pro</h4>
+                <button>
+                  SHOP NOW
+                  <span>
+                    <IoIosArrowRoundForward />
+                  </span>
+                </button>
+              </div>
+              <div className="right-top-img">
+                <img src="./watch.png" alt="watch" />
+
+                <div className="disscount">
+                  <span>25% OFF</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="freatur-left-bottom">
+            <div className="left-top-main">
+              <div className="left-top-img">
+                <img src="./watch.png" alt="watch" />
+              </div>
+              <div className="left-top-text">
+                <h3>Xiaomi FlipBuds Pro</h3>
+                <h4>$299 USD</h4>
+                <button>
+                  SHOP NOW
+                  <span>
+                    <IoIosArrowRoundForward />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

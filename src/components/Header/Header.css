@@ -93,6 +93,7 @@
 }
 .header-nav {
   display: flex;
+  background: #fff;
   align-items: center;
   justify-content: space-around;
 }
