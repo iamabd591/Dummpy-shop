@@ -21,6 +21,7 @@
 .left-img img {
   width: 300px;
   height: 300px;
+  cursor: pointer;
 }
 .left-text {
   width: 400px;
@@ -120,6 +121,7 @@
 .right-top-img img {
   width: 180px;
   height: 180px;
+  cursor: pointer;
 }
 .right-top-main .disscount {
   top: 10%;
@@ -174,9 +176,11 @@
 .left-top-img {
   width: 100%;
   height: 100%;
+  cursor: pointer;
   padding-left: 20px;
 }
 .left-top-img img {
   width: 180px;
   height: 180px;
+  cursor: pointer;
 }

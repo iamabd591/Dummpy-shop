@@ -1,0 +1,100 @@
+.left-container {
+  position: relative;
+}
+.left-container {
+  width: 25%;
+  height: 100%;
+  padding: 20px;
+  border: 1px solid #eae8e8;
+}
+.left-container.product-image {
+  width: 100px;
+  height: 100px;
+}
+.left-container .product-image img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  padding-top: 70px;
+  background: transparent;
+}
+.offer {
+  top: 5%;
+  width: 80px;
+  height: 26px;
+  padding: 2px;
+  font-weight: 800;
+  position: absolute;
+  text-align: center;
+  background-color: #efd33d;
+}
+.lable {
+  top: 12%;
+  width: 50px;
+  height: 26px;
+  padding: 2px;
+  color: #fff;
+  font-weight: 700;
+  position: absolute;
+  text-align: center;
+  background-color: #ee5858;
+}
+.left-container h5 {
+  font-size: 16px;
+  font-weight: 700;
+  padding-top: 10px;
+  text-align: justify;
+}
+.left-container .price {
+  padding-top: 10px;
+  font-size: 14px;
+  color: #858585;
+  display: inline;
+  text-decoration: line-through;
+}
+.left-container .dis-price {
+  display: inline;
+  font-size: 18px;
+  color: #2da5f3;
+  font-weight: 700;
+  margin-left: 10px;
+  text-decoration: none;
+}
+.left-container .description {
+  font-size: 14px;
+  padding-top: 10px;
+  text-align: justify;
+}
+.left-container .buttons {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.buttons .wish-list,
+.eye-view {
+  width: 20%;
+  height: 50px;
+  padding: 5px;
+  color: #000;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: 800;
+  text-align: center;
+  background-color: #ffe7d6;
+}
+.buttons .add-to-cart {
+  width: 60%;
+}
+.buttons .add-to-cart button {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 12px;
+  height: 50px;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  background-color: #ff6c03;
+}
