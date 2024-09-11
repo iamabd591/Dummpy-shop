@@ -86,12 +86,12 @@ const Header = () => {
               max={30}
               className="product-search"
             />
+            <button>
+              <p>
+                <CiSearch />
+              </p>
+            </button>
           </form>
-          <button>
-            <p>
-              <CiSearch />
-            </p>
-          </button>
         </div>
         <div className="user-icons">
           <p>
