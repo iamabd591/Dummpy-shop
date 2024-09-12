@@ -1,7 +1,7 @@
 import "./ProductContainer.css";
 import Rating from "react-rating";
 import { useEffect } from "react";
-import { getProducts } from "../../redux/action";
+import { getFakeAPIProducts, getProducts } from "../../redux/action";
 import { useDispatch, useSelector } from "react-redux";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
@@ -10,6 +10,7 @@ const ProductContainer = () => {
   const data = useSelector((state) => state.products);
   useEffect(() => {
     dispatch(getProducts());
+    // dispatch(getFakeAPIProducts());
   }, [dispatch]);
   return (
     <>

@@ -30,6 +30,8 @@ const initialState = {
   loader: false,
   products: [],
   productById: {},
+  fakeApiProduct: [],
+  fakeApiProductByID: {},
 };
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
@@ -39,6 +41,7 @@ export default function reducer(state = initialState, action) {
       state = payload;
       return state;
 
+    //! Dummy API Products
     case "GET_PRODUCTS_REQUEST":
       return { ...state, loader: true };
 
@@ -55,6 +58,25 @@ export default function reducer(state = initialState, action) {
       return { ...state, loader: false, productById: payload };
 
     case "GET_PRODUCTS_FAILURE_BY_ID":
+      return { ...state, loader: false };
+
+    //! Fake API Products
+    case "GET_FAKE_PRODUCTS_REQUEST":
+      return { ...state, loader: true };
+
+    case "GET_FAKE_PRODUCTS_SUCCESS":
+      return { ...state, loader: false, fakeApiProduct: payload };
+
+    case "GET_FAKE_PRODUCTS_FAILURE":
+      return { ...state, loader: false };
+
+    case "GET_FAKE_PRODUCTS_REQUEST_BY_ID":
+      return { ...state, loader: true };
+
+    case "GET_FAKE_PRODUCTS_SUCCESS_BY_ID":
+      return { ...state, loader: false, fakeApiProductByID: payload };
+
+    case "GET_FAKE_PRODUCTS_FAILURE_BY_ID":
       return { ...state, loader: false };
 
     default:
