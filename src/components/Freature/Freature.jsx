@@ -20,7 +20,7 @@ const Freature = () => {
       if (index2 > data?.products?.length) {
         index2++;
       }
-      console.log(index2);
+      // console.log(index2);
       if (index3 > data?.products?.length) {
         index3 += 2;
       }

@@ -1,12 +1,12 @@
 import "./SideProduct.css";
-import React, { useEffect, useState } from "react";
 import Rating from "react-rating";
 import { CiHeart } from "react-icons/ci";
 import { IoEyeOutline } from "react-icons/io5";
 import { FiShoppingCart } from "react-icons/fi";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../redux/action";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 const SideProduct = () => {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const SideProduct = () => {
     <>
       <div className="left-container">
         <div className="product-image">
-          <img src={products?.thumbnail} alt="watch" />
+          <img src={products?.thumbnail} alt={products?.title} />
         </div>
         <p className="offer">{products?.discountPercentage}%OFF</p>
         <p className="lable">HOT</p>
