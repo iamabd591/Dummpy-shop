@@ -1,38 +1,56 @@
 import "./SideProduct.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Rating from "react-rating";
 import { CiHeart } from "react-icons/ci";
 import { IoEyeOutline } from "react-icons/io5";
 import { FiShoppingCart } from "react-icons/fi";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../../redux/action";
 
 const SideProduct = () => {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state?.products);
+  const [products, setProducts] = useState(null);
+  useEffect(() => {
+    if (data?.products?.length > 0) {
+      const index = Math.floor(Math.random() * data?.products?.length);
+      const selectedProduct = data?.products[index];
+      setProducts(selectedProduct);
+    }
+  }, [data]);
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch]);
   return (
     <>
       <div className="left-container">
         <div className="product-image">
-          <img src="./watch.png" alt="watch" />
+          <img src={products?.thumbnail} alt="watch" />
         </div>
-        <p className="offer">32% OFF</p>
+        <p className="offer">{products?.discountPercentage}%OFF</p>
         <p className="lable">HOT</p>
         <span>
           <Rating
             emptySymbol={<AiOutlineStar size={15} color="#ffd700" />}
             fullSymbol={<AiFillStar size={15} color="#ffd700" />}
-            initialRating={4.5}
+            initialRating={products?.rating}
             readonly={true}
           />
         </span>
-        <h5>
-          Xbox Series S-512GB SSD Console With Wireless Controller - EU Version
-        </h5>
-        <p className="price">$850.99</p>
-        <p className="dis-price">$442.12</p>
-        <p className="description">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum
-          quisquam iure delectus nihil adipisci corrupti similique nobis fugit
-          voluptatem provident!
+        <h5>{products?.title}</h5>
+        <p className="price">${products?.price}</p>
+        <p className="dis-price">
+          {products && products?.price && products?.discountPercentage ? (
+            `$${(
+              products?.price -
+              products?.price * (products?.discountPercentage / 100)
+            ).toFixed(1)}`
+          ) : (
+            <p>No discount available</p>
+          )}
         </p>
+        <p className="description">{products?.description}</p>
         <div className="buttons">
           <div className="wish-list">
             <p>

@@ -11,7 +11,7 @@
   width: 100px;
   height: 100px;
 }
-.left-container .product-image img {
+.left-container > .product-image > img {
   width: 100%;
   height: 100%;
   cursor: pointer;
@@ -21,7 +21,7 @@
 .offer {
   top: 5%;
   width: 80px;
-  height: 26px;
+  height: 25px;
   padding: 2px;
   font-weight: 800;
   position: absolute;
@@ -31,7 +31,7 @@
 .lable {
   top: 12%;
   width: 50px;
-  height: 26px;
+  height: 25px;
   padding: 2px;
   color: #fff;
   font-weight: 700;
