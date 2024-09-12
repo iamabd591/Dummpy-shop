@@ -1,9 +1,9 @@
 import "./ProductContainer.css";
 import Rating from "react-rating";
 import { useEffect } from "react";
-import { getFakeAPIProducts, getProducts } from "../../redux/action";
 import { useDispatch, useSelector } from "react-redux";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import { getFakeAPIProducts, getProducts } from "../../redux/action";
 
 const ProductContainer = () => {
   const dispatch = useDispatch();
