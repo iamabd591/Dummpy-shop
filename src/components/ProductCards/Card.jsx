@@ -23,7 +23,7 @@ function Card() {
 
   return (
     <div className="cardMain">
-      {products?.products?.map((item, ind) => (
+      {/* {products?.products?.map((item, ind) => (
         <div className="card" key={ind}>
           <div className="price">
             <p>
@@ -81,7 +81,7 @@ function Card() {
             <button>Add To Cart</button>
           </div>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 }

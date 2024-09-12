@@ -1,62 +1,78 @@
-.right-container {
-  width: 75%;
-  height: 100%;
-  padding: 10px;
-  border: 1px solid #eae8e8;
-}
 .product-card-main {
+  width: 75%;
+  height: 103vh;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow: scroll;
 }
 .product-card {
-  width: 25%;
-  height: 100%;
+  flex: 2 1 30%;
   padding: 10px;
+  height: 350px;
   border: 1px solid #eae8e8;
+  border-bottom: none;
 }
-.product-card .lable-sold {
+
+.lable-sold {
   width: 80px;
   padding: 5px;
+  height: 24px;
   font-size: 12px;
   color: #ffffff;
   text-align: center;
-  background-color: #6c6c6c;
+  background-color: #035011;
 }
-.product-card .lable-hot {
-  width: 50px;
-  height: 26px;
+.lable-hot {
+  width: 80px;
+  height: 24px;
   padding: 2px;
   color: #fff;
   font-weight: 700;
   text-align: center;
-  background-color: #ee5858;
+  background-color: #ae0606;
 }
-.product-card .lable-discount {
-  width: 80px;
-  height: 26px;
+.lable-discount {
+  width: 100px;
+  height: 24px;
   padding: 2px;
   font-weight: 800;
   text-align: center;
   background-color: #efd33d;
 }
-.product-card .image {
-  width: 90%;
-  height: 90%;
-}
-.product-card .image img {
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  background: transparent;
-}
-.product-card .title p {
+
+.title > p {
+  height: 18px;
   font-size: 14px;
   padding-top: 10px;
   text-align: justify;
 }
-.product-card .price {
+.price > p {
   font-size: 16px;
-  color: #2da5f3;
+  display: inline;
   font-weight: 700;
+  color: #989898;
+  text-decoration: line-through;
+}
+.image {
+  cursor: pointer;
+  background: transparent;
+}
+.price > span {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2da5f3;
+  margin-left: 10px;
+  text-decoration: none;
+}
+.price > h6 {
+  display: inline;
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 5px;
+}
+.star > h6 {
+  display: inline;
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 5px;
 }
