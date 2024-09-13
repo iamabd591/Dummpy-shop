@@ -75,19 +75,26 @@
 .freature-products-left-ad > img {
   cursor: pointer;
 }
+.freature-products-right {
+  width: 75%;
+  height: 615px;
+  display: flex;
+  margin-left: 30px;
+  flex-direction: column;
+}
 
 .freature-products-right-nav {
-  width: 75%;
+  width: 100%;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.heading {
+.freture-heading {
   width: 40%;
   padding: 12px;
 }
-.heading > h2 {
+.freture-heading > h2 {
   font-size: 24px;
   font-weight: 600;
 }
@@ -146,4 +153,60 @@
 }
 .icon-link span {
   font-size: 14px;
+}
+.right-products {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+  border: 1px solid #d4d4d4;
+}
+.product-card {
+  flex: 2 1 30%;
+  padding: 10px;
+  height: 350px;
+  border-bottom: none;
+  border: 1px solid #eae8e8;
+}
+.freature-products-title > p {
+  height: 30px;
+  font-size: 12px;
+  padding-top: 10px;
+  font-weight: bold;
+  text-align: justify;
+}
+.freature-products-price > h6 {
+  display: inline;
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 5px;
+}
+.freature-products-price > p {
+  font-size: 16px;
+  display: inline;
+  font-weight: 700;
+  color: #1f6af7;
+  text-decoration: none;
+}
+.image {
+  cursor: pointer;
+  background: transparent;
+}
+.freature-products-star {
+  padding-top: 20px;
+}
+.freature-products-star > h6 {
+  display: inline;
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 5px;
+}
+.lable-hot {
+  width: 80px;
+  height: 24px;
+  padding: 2px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  background-color: #ae0606;
 }
