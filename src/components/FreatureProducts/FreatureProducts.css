@@ -1,0 +1,81 @@
+.freature-products-main {
+  width: 100%;
+  display: flex;
+  padding: 20px 25px;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+.freature-products-left {
+  width: 24%;
+  height: 615px;
+  padding: 40px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f3de6d;
+}
+.freature-products-left-ad > h3 {
+  width: 100%;
+  height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #be4646;
+  padding-top: 15px;
+  text-transform: uppercase;
+}
+.freature-products-left-ad > h2 {
+  width: 100%;
+  height: 25px;
+  font-size: 26px;
+  font-weight: 600;
+  padding-top: 15px;
+  text-transform: capitalize;
+}
+.freature-products-left-ad > h6 {
+  width: 100%;
+  height: 25px;
+  font-size: 14px;
+  color: #77878f;
+  padding-top: 20px;
+}
+
+.freature-products-left-ad > p {
+  width: 100%;
+  height: 40px;
+  color: #000;
+  font-size: 16px;
+  padding-top: 15px;
+}
+.freature-products-left-ad > p > span {
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #fff;
+}
+.freature-products-left-ad > button {
+  border: none;
+  width: 150px;
+  height: 45px;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 12px 14px;
+  background-color: #ff6a00;
+}
+.freature-products-left-ad > button span {
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+.freature-products-left-ad img {
+  cursor: pointer;
+}
+.freature-products-right {
+  width: 75%;
+  border: 1px solid #dadadb;
+}
