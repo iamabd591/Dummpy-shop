@@ -61,26 +61,27 @@ const FreatureProducts = () => {
             <img src="./Image11.png" alt="title" />
           </div>
         </div>
-        <div className="freature-products-right">
-          <div className="freature-products-right-nav">
-            <div className="heading">
-              <h2>Freature Products</h2>
-            </div>
-            <div className="nav-browser">
-              <a href="">All Products</a>
-              <a href="">Smart Phones</a>
-              <a href="">Laptops</a>
-              <a href="">HeadPhones</a>
-              <a href="">TV</a>
-              <a href="">
-                Browse All Products
-                <span>
-                  <FaArrowRight />
-                </span>
-              </a>
-            </div>
+
+        <div className="freature-products-right-nav">
+          <div className="heading">
+            <h2>Freature Products</h2>
+          </div>
+          <div className="nav-browser">
+            <a href="">All Products</a>
+            <a href="">Smart Phones</a>
+            <a href="">Laptops</a>
+            <a href="">HeadPhones</a>
+            <a href="">TV</a>
+            <a href="" className="icon-link">
+              Browse All Products
+              <span>
+                <FaArrowRight />
+              </span>
+            </a>
           </div>
         </div>
+
+        <div className="freature-products-right"></div>
       </div>
     </>
   );
