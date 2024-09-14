@@ -28,7 +28,7 @@ export const getFakeAPIProducts = () => async (dispatch) => {
     const fakeProduts = await getRequest({
       url: "https://fakestoreapi.com/products",
     });
-    console.log(fakeProduts);
+    // console.log(fakeProduts);
     dispatch(
       success({ type: "GET_FAKE_PRODUCTS_SUCCESS", payload: fakeProduts })
     );

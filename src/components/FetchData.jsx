@@ -1,7 +1,25 @@
-import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getFakeAPIProducts, getProducts } from "../redux/action";
 
-const FetchData = () => {
-  return <div></div>;
+const useFetchData = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getFakeAPIProducts());
+  }, [dispatch]);
+
+  const data = useSelector((state) => state.products);
+  const fakeData = useSelector((state) => state.fakeApiProduct);
+
+  return {
+    products: data?.products,
+    fakeApiProducts: fakeData,
+  };
 };
 
-export default FetchData;
+export default useFetchData;
