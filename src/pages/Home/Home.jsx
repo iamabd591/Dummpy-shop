@@ -7,6 +7,7 @@ import Banner from "../../components/Banner/Banner";
 import Freature from "../../components/Freature/Freature";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import FreatureProducts from "../../components/FreatureProducts/FreatureProducts";
+import LongBanner from "../../components/LongBanner/LongBanner";
 
 function Home() {
   return (
@@ -19,6 +20,7 @@ function Home() {
       <FreatureProducts />
       <Banner />
       <ProductCard />
+      <LongBanner />
     </>
   );
 }
