@@ -62,7 +62,7 @@ const Freature = () => {
             <div className="right-top-main">
               <div className="right-top-text">
                 <h3>Summer Sales</h3>
-                <h4>{products2?.title}</h4>
+                <h4>{products2?.title.slice(0, 16)}</h4>
                 <button>
                   SHOP NOW
                   <span>
@@ -85,7 +85,7 @@ const Freature = () => {
                 <img src={products3?.thumbnail} alt={products3?.title} />
               </div>
               <div className="left-top-text">
-                <h3>{products3?.title}</h3>
+                <h3>{products3?.title.slice(0.16)}</h3>
                 <h4>${products3?.price}</h4>
                 <button>
                   SHOP NOW
