@@ -6,6 +6,7 @@ import Return from "../../components/Return/Return";
 import Banner from "../../components/Banner/Banner";
 import Freature from "../../components/Freature/Freature";
 import FreatureProducts from "../../components/FreatureProducts/FreatureProducts";
+import DynamicProductsCard from "../../components/Dynamic/DynamicProductsCard/DynamicProductsCard";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <Slider />
       <FreatureProducts />
       <Banner />
+      <DynamicProductsCard />
     </>
   );
 }
