@@ -19,19 +19,116 @@
   background-color: #ffffff;
 }
 .freature-products-left-ad-top {
-  height: 60%;
+  height: 70%;
   width: 100%;
+  display: flex;
+  padding: 10px;
   border-radius: 5px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   background-color: #f7e99e;
+}
+.ads-image {
+  width: 100%;
+  height: 40%;
+}
+.ads-image > img {
+  height: 100%;
+  cursor: pointer;
+}
+.freature-products-left-ad-top > .top-ads-heading {
+  width: 100%;
+  height: 20%;
+}
+.freature-products-left-ad-top > .top-ads-heading > h3 {
+  font-size: 24px;
+  font-weight: 600;
+  background: transparent;
+}
+.ads-description {
+  width: 100%;
+  height: 25%;
+}
+.ads-description > p {
+  width: 100%;
+  font-size: 14px;
+  color: #575757;
+  text-align: center;
+}
+.ads-price {
+  width: 100%;
+  height: 25%;
+}
+.ads-price > p {
+  display: inline;
+  font-size: 14px;
+}
+.ads-price > p > span {
+  padding: 8px;
+  font-weight: 700;
+  background-color: #fff;
+}
+.ads-button {
+  padding-top: 12px;
+}
+.ads-button > button {
+  border: none;
+  padding: 8px;
+  width: 200px;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  background-color: #ff6a00;
+}
+.ads-button > button > span {
+  font-size: 20px;
 }
 .freature-products-left-ad-bottom {
   height: 40%;
   width: 100%;
-  margin-top: 10px;
+  display: flex;
+  padding: 18px;
+  margin-top: 14px;
   border-radius: 5px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   background-color: #124261;
 }
-
+.bottom-ads-lable {
+  width: 120px;
+  height: auto;
+}
+.bottom-ads-lable > p {
+  color: #fff;
+  background-color: #baaeae;
+  text-transform: uppercase;
+}
+.ads-discount-lable > p {
+  font-size: 26px;
+  color: #fff;
+}
+.ads-description > p {
+  color: #fff;
+}
+.ads-description > p > span {
+  color: #ffe608;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.bottom-ad-button > button {
+  border: none;
+  padding: 8px;
+  width: 200px;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  background-color: #2da5f3;
+}
+.bottom-ad-button > button > span {
+  font-size: 20px;
+}
 .freature-products-right {
   width: 75%;
   height: 615px;

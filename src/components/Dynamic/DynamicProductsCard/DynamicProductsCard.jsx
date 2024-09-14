@@ -1,66 +1,34 @@
 import Rating from "react-rating";
 import "./DynamicProductsCard.css";
 import { FaArrowRight } from "react-icons/fa6";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import { getFakeAPIProducts } from "../../../redux/action";
+import { HiOutlineArrowLongRight } from "react-icons/hi2";
+import { useEffect, useState } from "react";
 
-const DynamicProductsCard = () => {
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.fakeApiProduct);
-
+const DynamicProductsCard = ({ products, fakeApiProducts }) => {
+  // console.log(fakeApiProducts);
+  // console.log(products);
   const [sliceData, setSliceData] = useState([]);
 
-  useEffect(() => {
-    dispatch(getFakeAPIProducts());
-  }, [dispatch]);
+  const getRandomIndex = (arr) => {
+    return Math.floor(Math.random() * arr?.length);
+  };
+
+  const randomProduct =
+    products?.length > 0 ? products[getRandomIndex(products)] : null;
 
   useEffect(() => {
-    if (sliceData.length === 0 && data.length > 0) {
-      setSliceData(data.slice(0, 18));
+    if (sliceData?.length === 0 && fakeApiProducts?.length > 0) {
+      setSliceData(fakeApiProducts?.slice(0, 18));
     }
-  }, [data, sliceData]);
-
-  // console.log(sliceData);
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-
-  useEffect(() => {
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 5);
-
-    const calculateTimeLeft = () => {
-      const now = new Date();
-      const difference = targetDate - now;
-
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
-        });
-      } else {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-      }
-    };
-
-    const timerInterval = setInterval(calculateTimeLeft, 1000);
-
-    return () => clearInterval(timerInterval);
-  }, []);
+  }, [fakeApiProducts, sliceData]);
 
   return (
     <div className="freature-products-main">
       <div className="freature-products-right">
         <div className="freature-products-right-nav">
           <div className="freture-heading">
-            <h2>Freature Products</h2>
+            <h2>Feature Products</h2>
           </div>
           <div className="nav-browser">
             <a href="#">All Products</a>
@@ -75,45 +43,103 @@ const DynamicProductsCard = () => {
         </div>
 
         <div className="right-products">
-          {sliceData.map((item, index) => (
-            <div className="product-card" key={index}>
-              <p className="lable-hot">HOT</p>
-              <center className="image">
-                <img
-                  src={item?.image}
-                  alt={item?.title}
-                  height="150"
-                  width="150"
-                />
-              </center>
-              <div className="freature-products-star">
-                <h6>Rating</h6>
-                <Rating
-                  emptySymbol={<AiOutlineStar size={18} color="#ffd700" />}
-                  fullSymbol={<AiFillStar size={18} color="#ffd700" />}
-                  initialRating={item?.rating?.rate}
-                  readonly
-                />
+          {sliceData && sliceData?.length > 0 ? (
+            sliceData?.map((product, index) => (
+              <div className="product-card" key={index}>
+                <p className="lable-hot">HOT</p>
+                <center className="image">
+                  <img
+                    src={product?.image}
+                    alt={product?.title}
+                    height="150"
+                    width="150"
+                  />
+                </center>
+                <div className="freature-products-star">
+                  <h6>Rating</h6>
+                  <Rating
+                    emptySymbol={<AiOutlineStar size={18} color="#ffd700" />}
+                    fullSymbol={<AiFillStar size={18} color="#ffd700" />}
+                    initialRating={product?.rating?.rate || 0}
+                    readonly
+                  />
+                </div>
+                <div className="freature-products-title">
+                  <p>
+                    {product?.title?.length > 20
+                      ? product?.title.slice(0, 20) + "..."
+                      : product?.title}
+                  </p>
+                </div>
+                <div className="freature-products-price">
+                  <h6>Price</h6>
+                  <p>${product?.price}</p>
+                </div>
               </div>
-              <div className="freature-products-title">
-                <p>
-                  {item?.title?.length > 40
-                    ? item?.title.slice(0, 40) + "..."
-                    : item?.title}
-                </p>
-              </div>
-              <div className="freature-products-price">
-                <h6>Price</h6>
-                <p>${item?.price}</p>
-              </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p>Loading...</p>
+          )}
         </div>
       </div>
-
       <div className="freature-products-left-ads">
-        <div className="freature-products-left-ad-top"></div>
-        <div className="freature-products-left-ad-bottom"></div>
+        <div className="freature-products-left-ad-top">
+          <div className="ads-image">
+            <img
+              src={randomProduct ? randomProduct?.thumbnail : "Loading..."}
+              alt={randomProduct ? randomProduct?.title : "Loading..."}
+            />
+          </div>
+          <div className="top-ads-heading">
+            <h3>{randomProduct ? randomProduct?.title : "Loading..."}</h3>
+          </div>
+          <div className="ads-description">
+            <p>
+              {randomProduct
+                ? randomProduct?.description?.length > 90
+                  ? randomProduct?.description?.slice(0, 90) + " "
+                  : randomProduct?.description
+                : "Loading..."}
+            </p>
+          </div>
+          <div className="ads-price">
+            <p>
+              Only For:{" "}
+              <span>
+                ${randomProduct ? randomProduct?.price : "Loading..."} USD
+              </span>{" "}
+            </p>
+          </div>
+          <div className="ads-button">
+            <button>
+              Shop Now{" "}
+              <span>
+                <HiOutlineArrowLongRight />
+              </span>
+            </button>
+          </div>
+        </div>
+        <div className="freature-products-left-ad-bottom">
+          <div className="bottom-ads-lable">
+            <p>Summer Sales</p>
+          </div>
+          <div className="ads-discount-lable">
+            <p>32% DISCOUNT</p>
+          </div>
+          <div className="ads-description">
+            <p>
+              only for <span>smart phones</span> products
+            </p>
+          </div>
+          <div className="bottom-ad-button">
+            <button>
+              Shop Now
+              <span>
+                <HiOutlineArrowLongRight />
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
