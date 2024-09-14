@@ -1,0 +1,163 @@
+.freature-banner-main {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  padding: 22px 28px;
+  align-items: center;
+  background-color: #fff;
+  justify-content: space-around;
+}
+.freature-banner-left {
+  width: 50%;
+  padding: 16px;
+  display: flex;
+  height: 300px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4;
+}
+.left-info {
+  width: 50%;
+  padding: 8px;
+  margin-left: 50px;
+}
+.left-banner-lable {
+  color: #fff;
+  height: 25px;
+  padding: 4px;
+  width: 100px;
+  text-align: center;
+  background-color: #007ad1;
+}
+.left-banner-lable > p {
+  font-size: 12px;
+}
+.left-banner-title {
+  width: 200px;
+  height: 60px;
+  padding-top: 10px;
+}
+.left-banner-title > h4 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.left-banner-description {
+  width: 250px;
+  padding-top: 8px;
+}
+.left-banner-description > p {
+  color: #9f9e9e;
+  font-size: 14px;
+}
+.left-banner-button > button {
+  border: none;
+  outline: none;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  background-color: #ff7700;
+}
+.left-banner-button > button > p {
+  color: #fff;
+  padding: 4px;
+  font-size: 16px;
+}
+.left-banner-button > button > p > span {
+  color: #ffffff;
+  font-size: 20px;
+}
+.left-banner-image {
+  width: 100%;
+}
+.left-banner-image > img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.freature-banner-right {
+  width: 50%;
+  height: 300px;
+  padding: 16px;
+  display: flex;
+  position: relative;
+  border-radius: 10px;
+  align-items: center;
+  background-color: #000;
+  justify-content: space-around;
+}
+.right-info {
+  width: 50%;
+  padding: 8px;
+  margin-left: 50px;
+}
+.right-banner-lable {
+  width: 140px;
+  height: 25px;
+  padding: 4px;
+  color: #000;
+  font-weight: 600;
+  text-align: center;
+  background-color: #fff70a;
+}
+.right-banner-lable > p {
+  font-size: 12px;
+}
+.right-banner-title {
+  width: 300px;
+  height: 110px;
+  padding-top: 14px;
+}
+.right-banner-title > h4 {
+  font-size: 40px;
+  color: #fff;
+}
+.right-banner-description {
+  width: 300px;
+  padding-top: 8px;
+}
+.right-banner-description > p {
+  color: #9f9e9e;
+  font-size: 16px;
+}
+.right-banner-button > button {
+  border: none;
+  outline: none;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  background-color: #ff7700;
+}
+.right-banner-button > button > p {
+  color: #fff;
+  padding: 4px;
+  font-size: 16px;
+}
+.right-banner-button > button > p > span {
+  color: #ffffff;
+  font-size: 20px;
+}
+.right-banner-image {
+  width: 100%;
+  height: 250px;
+}
+.right-banner-image > img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.right-banner-image-price {
+  top: 4%;
+  right: 8%;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #2da5f3;
+}
+.right-banner-image-price > p {
+  color: #fff;
+  font-size: 20px;
+  padding-top: 24px;
+  text-align: center;
+}

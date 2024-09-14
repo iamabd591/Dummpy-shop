@@ -5,6 +5,7 @@ import Slider from "../../components/Slider/Slider";
 import Return from "../../components/Return/Return";
 import Freature from "../../components/Freature/Freature";
 import FreatureProducts from "../../components/FreatureProducts/FreatureProducts";
+import DynamicFreatureBanner from "../../components/Dynamic/DynamicFreatureBanner/DynamicFreatureBanner";
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
       <Deal />
       <Slider />
       <FreatureProducts />
+      <DynamicFreatureBanner />
     </>
   );
 }
