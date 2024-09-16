@@ -1,0 +1,54 @@
+.catagory-heading {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+}
+.catagory-heading > h2 {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.catagory-card {
+  width: 100%;
+  height: 115px;
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ebebeb;
+}
+.catagory-card > .catagory-card-image {
+  width: 30%;
+  height: 100%;
+  padding: 20px;
+}
+.catagory-card > .catagory-card-image img {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+.catagory-card > .catagory-card-text {
+  width: 70%;
+  height: 100%;
+  text-align: justify;
+  padding: 18px 18px 18px 28px;
+}
+.catagory-card > .catagory-card-text > .title {
+  width: 100%;
+  height: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.catagory-card > .catagory-card-text > .description {
+  width: 100%;
+  height: 15px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.catagory-card > .catagory-card-text > .price {
+  width: 100%;
+  height: 10px;
+  font-size: 14px;
+  color: #2da5f3;
+  font-weight: bold;
+}
