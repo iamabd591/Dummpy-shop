@@ -9,6 +9,7 @@ import Freature from "../../components/Freature/Freature";
 import LongBanner from "../../components/LongBanner/LongBanner";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import FreatureProducts from "../../components/FreatureProducts/FreatureProducts";
+import News from "../../components/News/News";
 
 function Home() {
   return (
@@ -23,6 +24,7 @@ function Home() {
       <ProductCard />
       <LongBanner />
       <Catagory />
+      <News />
     </>
   );
 }

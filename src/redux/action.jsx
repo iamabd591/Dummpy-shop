@@ -37,6 +37,19 @@ export const getFakeAPIProducts = () => async (dispatch) => {
   }
 };
 
+export const getNEWS = () => async (dispatch) => {
+  dispatch(request({ type: "GET_NEWS_REQUEST" }));
+  try {
+    const news = await getRequest({
+      url: "https://newsdata.io/api/1/news?apikey=pub_53638c8b3827b0ca2fac344e31b31b7c8f3f7&q=amazon&country=us&category=business",
+    });
+    console.log(news);
+    dispatch(success({ type: "GET_NEWS_SUCCESS", payload: news }));
+  } catch (error) {
+    dispatch(reject({ type: "GET_NEWS_FAILURE", error: error }));
+  }
+};
+
 export const getProductsById = (id) => async (dispatch) => {
   dispatch(request({ type: "GET_PRODUCTS_REQUEST_BY_ID" }));
   try {
@@ -51,6 +64,7 @@ export const getProductsById = (id) => async (dispatch) => {
     dispatch(reject({ type: "GET_PRODUCTS_FAILURE_BY_ID", error: error }));
   }
 };
+
 export const getFakeAPIProductsByID = (id) => async (dispatch) => {
   dispatch(request({ type: "GET_FAKE_PRODUCTS_REQUEST_BY_ID" }));
   try {
@@ -65,5 +79,23 @@ export const getFakeAPIProductsByID = (id) => async (dispatch) => {
     );
   } catch (error) {
     dispatch(reject({ type: "GET_FAKE_PRODUCTS_FAILURE_BY_ID", error: error }));
+  }
+};
+
+export const getNEWSByID = (id) => async (dispatch) => {
+  dispatch(request({ type: "GET_NEWS_BY_ID" }));
+  try {
+    const NewsByID = await getRequestById({
+      url: `https://newsdata.io/api/1/news?apikey=pub_53638c8b3827b0ca2fac344e31b31b7c8f3f7&q=amazon&country=us&category=business/${id}`,
+    });
+    console.log(NewsByID);
+    dispatch(
+      success({
+        type: "GET_NEWS_SUCCESS_BY_ID",
+        payload: NewsByID,
+      })
+    );
+  } catch (error) {
+    dispatch(reject({ type: "GET_NEWS_FAILURE_BY_ID", error: error }));
   }
 };
