@@ -5,7 +5,6 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #000;
 }
 .news-card-main > h2 {
   font-size: 32px;
@@ -42,38 +41,37 @@
   cursor: pointer;
 }
 .news-icons {
+  width: 100%;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  height: 50px;
 }
 .news-icons > div {
   width: 33%;
   height: 100%;
 }
 .news-icons > div > p {
-  text-transform: capitalize;
-  font-size: 14px;
   color: #000;
-  padding: 10px;
-  margin-top: 12px;
+  font-size: 14px;
+  margin-top: 8px;
   text-align: center;
+  text-transform: capitalize;
 }
 .news-icons > div > p > span {
-  font-size: 16px;
-  margin-left: 10px;
+  font-size: 14px;
   color: #fa8232;
+  margin-left: 10px;
 }
 .news-title {
   width: 100%;
-  height: 50px;
+  height: 60px;
 }
 .news-title > p {
-  text-align: justify;
-  padding-top: 5px;
   font-size: 14px;
+  padding-top: 5px;
   font-weight: bold;
+  text-align: justify;
   text-transform: capitalize;
 }
 .news-description {
@@ -91,15 +89,15 @@
   height: 80px;
 }
 .news-btn button {
-  outline: none;
-  border: 1px solid #fa8232;
-  background-color: #ffffff;
-  color: #fa8232;
-  padding: 12px;
   height: 90%;
+  padding: 12px;
+  outline: none;
+  font-size: 16px;
+  color: #fa8232;
   text-align: center;
   text-transform: uppercase;
-  font-size: 16px;
+  border: 1px solid #fa8232;
+  background-color: #ffffff;
 }
 .news-btn button > span {
   font-size: 20px;

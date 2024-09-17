@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./NewsCard.css";
 <GrLanguage />;
 import { GrLanguage } from "react-icons/gr";
@@ -8,12 +8,19 @@ import { IoLocationOutline } from "react-icons/io5";
 const NewsCard = ({ news }) => {
   console.log(news);
   if (!news) return null;
+  const [sliceData, setSliceData] = useState([]);
+
+  useEffect(() => {
+    if (sliceData?.length === 0 && news?.length > 0) {
+      setSliceData(news?.slice(0, 3));
+    }
+  }, [news, sliceData]);
   return (
     <>
       <div className="news-card-main">
         <h2>Latest News</h2>
         <div className="news-card-container">
-          {news?.map((value, ind) => (
+          {sliceData?.map((value, ind) => (
             <div className="news-card" key={ind}>
               <div className="news-image">
                 <center>
