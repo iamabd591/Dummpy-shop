@@ -11,6 +11,7 @@ import ProductCard from "../../components/ProductCard/ProductCard";
 import FreatureProducts from "../../components/FreatureProducts/FreatureProducts";
 import News from "../../components/News/News";
 import NewsLetter from "../../components/NewsLetter/NewsLetter";
+import Footer from "../../components/Footer/Footer";
 
 function Home() {
   return (
@@ -27,6 +28,7 @@ function Home() {
       <Catagory />
       <News />
       <NewsLetter />
+      <Footer />
     </>
   );
 }
