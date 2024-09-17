@@ -10,6 +10,7 @@ import LongBanner from "../../components/LongBanner/LongBanner";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import FreatureProducts from "../../components/FreatureProducts/FreatureProducts";
 import News from "../../components/News/News";
+import NewsLetter from "../../components/NewsLetter/NewsLetter";
 
 function Home() {
   return (
@@ -25,6 +26,7 @@ function Home() {
       <LongBanner />
       <Catagory />
       <News />
+      <NewsLetter />
     </>
   );
 }

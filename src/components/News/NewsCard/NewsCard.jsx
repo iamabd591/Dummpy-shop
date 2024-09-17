@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./NewsCard.css";
-<GrLanguage />;
 import { GrLanguage } from "react-icons/gr";
 import { CgCalendarDates } from "react-icons/cg";
 import { HiArrowLongRight } from "react-icons/hi2";
