@@ -5,7 +5,6 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 const LongBanner = () => {
   const data = useSelector((state) => state?.products);
-  //   console.log(data?.products);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProducts());
@@ -19,7 +18,6 @@ const LongBanner = () => {
     data?.products?.length > 0
       ? data?.products[getRandomIndex(data?.products)]
       : null;
-  //   console.log(randomProduct);
 
   return (
     <>

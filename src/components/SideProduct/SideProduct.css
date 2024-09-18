@@ -46,10 +46,10 @@
   text-align: justify;
 }
 .left-container .price {
-  padding-top: 10px;
+  display: inline;
   font-size: 14px;
   color: #858585;
-  display: inline;
+  padding-top: 10px;
   text-decoration: line-through;
 }
 .left-container .dis-price {
@@ -90,9 +90,9 @@
 .buttons .add-to-cart button {
   width: 100%;
   border: none;
+  height: 50px;
   outline: none;
   padding: 12px;
-  height: 50px;
   color: #fff;
   font-size: 16px;
   text-align: center;

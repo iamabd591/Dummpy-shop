@@ -2,8 +2,6 @@ import "./DynamicFreatureBanner.css";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 const DynamicFreatureBanner = ({ products, fakeApiProducts }) => {
-  // console.log(products);
-  // console.log(fakeApiProducts);
   const getRandomIndex = (arr) => {
     return Math.floor(Math.random() * arr?.length);
   };
@@ -14,9 +12,6 @@ const DynamicFreatureBanner = ({ products, fakeApiProducts }) => {
     fakeApiProducts?.length > 0
       ? fakeApiProducts[getRandomIndex(fakeApiProducts)]
       : null;
-
-  // console.log(randomProduct);
-  // console.log(randomFakeApiProduct);
   return (
     <>
       <div className="freature-banner-main">

@@ -9,8 +9,8 @@
   flex: 2 1 30%;
   padding: 10px;
   height: 350px;
-  border: 1px solid #eae8e8;
   border-bottom: none;
+  border: 1px solid #eae8e8;
 }
 
 .lable-sold {
@@ -47,8 +47,8 @@
   text-align: justify;
 }
 .price > p {
-  font-size: 16px;
   display: inline;
+  font-size: 16px;
   font-weight: 700;
   color: #989898;
   text-decoration: line-through;

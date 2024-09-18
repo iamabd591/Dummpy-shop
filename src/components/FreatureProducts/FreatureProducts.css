@@ -59,10 +59,10 @@
   border: none;
   width: 150px;
   height: 45px;
-  color: #fff;
   outline: none;
-  cursor: pointer;
+  color: #fff;
   font-size: 14px;
+  cursor: pointer;
   font-weight: bold;
   padding: 12px 14px;
   background-color: #ff6a00;
@@ -77,8 +77,8 @@
 }
 .freature-products-right {
   width: 75%;
-  height: 615px;
   display: flex;
+  height: 615px;
   margin-left: 30px;
   flex-direction: column;
 }
@@ -101,8 +101,8 @@
 .nav-browser {
   width: 60%;
   display: flex;
-  align-items: center;
   position: relative;
+  align-items: center;
   justify-content: space-between;
 }
 .nav-browser > a {
@@ -114,11 +114,11 @@
 .nav-browser > a::before {
   left: 0;
   bottom: 0;
-  content: "";
-  width: 100%;
   height: 2px;
-  position: absolute;
+  width: 100%;
+  content: "";
   border-radius: 4px;
+  position: absolute;
   transform: scaleX(0);
   transform-origin: right;
   background-color: #02a6ff;
@@ -126,8 +126,8 @@
 }
 
 .nav-browser > a:hover::before {
-  transform-origin: left;
   transform: scaleX(1);
+  transform-origin: left;
 }
 .icon-link {
   margin-right: 5px;
@@ -137,19 +137,19 @@
 .icon-link::before {
   left: 0;
   bottom: 0;
-  content: "";
-  width: 100%;
   height: 2px;
-  position: absolute;
+  width: 100%;
+  content: "";
   border-radius: 4px;
+  position: absolute;
   transform: scaleX(0);
   transform-origin: right;
   background-color: #ff6a00 !important;
   transition: transform 0.3s ease-in-out;
 }
 .icon-link:hover::before {
-  transform-origin: left;
   transform: scaleX(1);
+  transform-origin: left;
 }
 .icon-link span {
   font-size: 14px;
@@ -171,8 +171,8 @@
 .freature-products-title > p {
   height: 30px;
   font-size: 12px;
-  padding-top: 10px;
   font-weight: bold;
+  padding-top: 10px;
   text-align: justify;
 }
 .freature-products-price > h6 {
@@ -203,8 +203,8 @@
 }
 .lable-hot {
   width: 80px;
-  height: 24px;
   padding: 2px;
+  height: 24px;
   color: #fff;
   font-weight: 700;
   text-align: center;

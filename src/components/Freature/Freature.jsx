@@ -1,7 +1,7 @@
 import "./Freature.css";
-import { useDispatch, useSelector } from "react-redux";
-import React, { useEffect, useState } from "react";
 import { getProducts } from "../../redux/action";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 const Freature = () => {
@@ -20,7 +20,6 @@ const Freature = () => {
       if (index2 > data?.products?.length) {
         index2++;
       }
-      // console.log(index2);
       if (index3 > data?.products?.length) {
         index3 += 2;
       }

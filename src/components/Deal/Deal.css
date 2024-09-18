@@ -11,20 +11,20 @@
   font-weight: 600;
 }
 .heading div p {
-  margin-left: 20px;
   display: inline;
   font-size: 14px;
+  margin-left: 20px;
 }
 .heading div p span {
   font-size: 18px;
+  font-weight: 700;
   padding: 12px 8px;
   background-color: #faff63;
-  font-weight: 700;
 }
 .heading a {
-  text-transform: capitalize;
   font-size: 16px;
   color: #2da5f3;
+  text-transform: capitalize;
 }
 .heading a span {
   font-size: 24px;
@@ -34,7 +34,7 @@
   height: 115vh;
   padding: 40px;
   display: flex;
-  background-color: #fff;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  background-color: #fff;
 }

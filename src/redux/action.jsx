@@ -43,7 +43,7 @@ export const getNEWS = () => async (dispatch) => {
     const news = await getRequest({
       url: "https://newsdata.io/api/1/news?apikey=pub_53638c8b3827b0ca2fac344e31b31b7c8f3f7&q=amazon&country=us&category=business",
     });
-    console.log(news);
+    // console.log(news);
     dispatch(success({ type: "GET_NEWS_SUCCESS", payload: news }));
   } catch (error) {
     dispatch(reject({ type: "GET_NEWS_FAILURE", error: error }));
@@ -89,7 +89,7 @@ export const getNEWSByID = (id) => async (dispatch) => {
     const NewsByID = await getRequestById({
       url: `https://newsdata.io/api/1/news?apikey=pub_53638c8b3827b0ca2fac344e31b31b7c8f3f7&q=amazon&country=us&category=business/${id}`,
     });
-    console.log(NewsByID);
+    // console.log(NewsByID);
     dispatch(
       success({
         type: "GET_NEWS_SUCCESS_BY_ID",

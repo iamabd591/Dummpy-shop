@@ -1,16 +1,16 @@
 import "./Product.css";
 import React from "react";
 import Rating from "react-rating";
-import { useParams } from "react-router";
-import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import { getProductsById } from "../../../redux/action";
-import { IoStarSharp } from "react-icons/io5";
-import { FaCircleArrowLeft, FaCircleArrowRight } from "react-icons/fa6";
-import { MdShoppingCart } from "react-icons/md";
 import { GoPlus } from "react-icons/go";
+import { useParams } from "react-router";
 import { FiMinus } from "react-icons/fi";
+import { useEffect, useState } from "react";
+import { IoStarSharp } from "react-icons/io5";
+import { MdShoppingCart } from "react-icons/md";
+import { useSelector, useDispatch } from "react-redux";
+import { getProductsById } from "../../../redux/action";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import { FaCircleArrowLeft, FaCircleArrowRight } from "react-icons/fa6";
 const Product = () => {
   const { id } = useParams();
   const productId = id.split("-")[0];

@@ -30,8 +30,8 @@
 .left-text h4 {
   font-size: 14px;
   font-weight: 700;
-  padding-top: 20px;
   color: #0062ff;
+  padding-top: 20px;
 }
 .left-text h2 {
   font-weight: bold;
@@ -44,8 +44,8 @@
   border: none;
   width: 150px;
   height: 45px;
-  color: #fff;
   outline: none;
+  color: #fff;
   cursor: pointer;
   font-size: 14px;
   font-weight: bold;
@@ -62,9 +62,9 @@
   width: 100px;
   height: 100px;
   padding-top: 28px;
+  text-align: center;
   position: absolute;
   border-radius: 50%;
-  text-align: center;
   border: 1px solid #fff;
   background-color: #0062ff;
 }
@@ -82,8 +82,8 @@
   height: 200px;
   padding: 20px;
   display: flex;
-  border-radius: 8px;
   position: relative;
+  border-radius: 8px;
   align-items: center;
   justify-content: center;
   background-color: #000;
@@ -129,9 +129,9 @@
 .right-top-main .disscount {
   top: 5%;
   right: 15%;
-  width: 100px;
   height: 30px;
   padding: 8px;
+  width: 100px;
   color: #000;
   font-weight: 900;
   position: absolute;
@@ -157,9 +157,9 @@
   font-weight: 700;
 }
 .left-top-text h4 {
+  width: 140px;
   font-size: 16px;
   color: #0062ff;
-  width: 140px;
   font-weight: 700;
 }
 .left-top-text button {

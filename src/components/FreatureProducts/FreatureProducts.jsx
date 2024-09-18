@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import "./FreatureProducts.css";
 import Rating from "react-rating";
 import { FaArrowRight } from "react-icons/fa6";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { getFakeAPIProducts } from "../../redux/action";
-import "./FreatureProducts.css";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 const FreatureProducts = () => {
   const dispatch = useDispatch();
@@ -22,7 +22,6 @@ const FreatureProducts = () => {
     }
   }, [data, sliceData]);
 
-  // console.log(sliceData);
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,

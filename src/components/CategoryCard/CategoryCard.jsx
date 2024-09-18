@@ -4,9 +4,6 @@ const CategoryCard = ({ product }) => {
 
   return (
     <>
-      {/* <div className="catagory-heading">
-        <h2>Trending</h2>
-      </div> */}
       <div className="catagory-card">
         <div className="catagory-card-image">
           <img

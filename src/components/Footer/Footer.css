@@ -15,9 +15,9 @@
 .footer-top-section {
   height: 90%;
   width: 100%;
-  color: #fff;
   padding: 12px;
   display: flex;
+  color: #fff;
   align-items: center;
   justify-content: space-around;
 }
@@ -28,8 +28,8 @@
   padding: 25px;
 }
 .footer-logo {
-  width: 100%;
   height: 20%;
+  width: 100%;
   cursor: pointer;
   padding-top: 30px;
 }
@@ -39,9 +39,9 @@
   padding-top: 18px;
 }
 .footer-info > h4 {
-  font-size: 20px;
-  color: #fff;
   height: 40px;
+  color: #fff;
+  font-size: 20px;
 }
 .footer-info > p {
   font-size: 18px;
@@ -51,14 +51,14 @@
 }
 .top-category-section {
   width: 18%;
-  height: 100%;
   margin: 5px;
+  height: 100%;
 }
 .top-category-section > h2 {
   width: 100%;
   height: 15%;
-  color: #fff;
   padding: 25px;
+  color: #fff;
   font-size: 16px;
   font-weight: 900;
   text-transform: uppercase;
@@ -68,24 +68,24 @@
   height: 80%;
 }
 .category-list > ul > li {
-  list-style: none;
   font-size: 16px;
-  padding-top: 18px;
   cursor: pointer;
+  list-style: none;
+  padding-top: 18px;
 }
 .category-list > ul > li:hover {
   color: #fa8232;
 }
 .quick-links-section {
   width: 18%;
-  height: 100%;
   margin: 5px;
+  height: 100%;
 }
 .quick-links-section > h2 {
   width: 100%;
   height: 15%;
-  color: #fff;
   padding: 25px;
+  color: #fff;
   font-size: 16px;
   font-weight: 900;
   text-transform: uppercase;
@@ -116,10 +116,10 @@
   justify-content: space-between;
 }
 .download-section > .play-store-icon > p {
-  font-size: 40px;
   width: 50%;
-  text-align: center;
   cursor: pointer;
+  font-size: 40px;
+  text-align: center;
 }
 .download-section > .play-store-icon > .play-store-text {
   width: 50%;
@@ -156,8 +156,8 @@
 .tag-section > h2 {
   width: 100%;
   height: 15%;
-  color: #fff;
   padding: 25px;
+  color: #fff;
   font-size: 16px;
   text-align: left;
   font-weight: 900;
@@ -166,15 +166,15 @@
 .tag-section > .tags {
   width: 100%;
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
+  align-items: center;
 }
 .tag-section > .tags > p {
   margin: 4px;
   width: 100%;
   height: 50px;
-  flex: 1 2 30%;
   padding: 10px;
+  flex: 1 2 30%;
   color: #fff;
   cursor: pointer;
   font-size: 14px;
@@ -183,8 +183,8 @@
   text-transform: capitalize;
 }
 .tag-section > .tags > p:hover {
-  border: 1px solid #fa8232;
   color: #fa8232;
+  border: 1px solid #fa8232;
 }
 .footer-bottom-section {
   width: 100%;

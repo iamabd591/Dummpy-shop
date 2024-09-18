@@ -2,22 +2,22 @@
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 .news-card-main > h2 {
+  padding: 10px;
   font-size: 32px;
   font-weight: bold;
-  padding: 10px;
 }
 .news-card-container {
   width: 100%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   padding: 22px 28px;
+  align-items: center;
 }
 .news-card {
   width: 33%;
@@ -53,8 +53,8 @@
 }
 .news-icons > div > p {
   color: #000;
-  font-size: 14px;
   margin-top: 8px;
+  font-size: 14px;
   text-align: center;
   text-transform: capitalize;
 }
@@ -81,8 +81,8 @@
 .news-description > p {
   width: 100%;
   height: 100%;
-  text-align: justify;
   font-size: 16px;
+  text-align: justify;
 }
 .news-btn {
   width: 100%;
@@ -90,8 +90,8 @@
 }
 .news-btn button {
   height: 90%;
-  padding: 12px;
   outline: none;
+  padding: 12px;
   font-size: 16px;
   color: #fa8232;
   text-align: center;

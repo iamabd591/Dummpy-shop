@@ -1,4 +1,3 @@
-// import "./News.css";
 import React, { useEffect } from "react";
 import NewsCard from "./NewsCard/NewsCard";
 import { getNEWS } from "../../redux/action";
@@ -11,7 +10,6 @@ const News = () => {
   }, [dispatch]);
 
   const newsData = useSelector((state) => state?.news);
-  // console.log(newsData?.results);
   return (
     <>
       <NewsCard news={newsData?.results} />

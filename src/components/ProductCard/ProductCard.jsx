@@ -4,8 +4,6 @@ import DynamicProductsCard from "../Dynamic/DynamicProductsCard/DynamicProductsC
 
 const ProductCard = () => {
   const { products, fakeApiProducts } = useFetchData();
-  //   console.log(products);
-  //   console.log(fakeApiProducts);
   return (
     <>
       <DynamicProductsCard

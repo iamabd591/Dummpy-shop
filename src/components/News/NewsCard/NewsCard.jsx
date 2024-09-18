@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
 import "./NewsCard.css";
 import { GrLanguage } from "react-icons/gr";
 import { CgCalendarDates } from "react-icons/cg";
+import React, { useEffect, useState } from "react";
 import { HiArrowLongRight } from "react-icons/hi2";
 import { IoLocationOutline } from "react-icons/io5";
 const NewsCard = ({ news }) => {
-  // console.log(news);
   if (!news) return null;
   const [sliceData, setSliceData] = useState([]);
 
@@ -41,7 +40,7 @@ const NewsCard = ({ news }) => {
                 <div>
                   <p>
                     {value && value?.country === "united states of america"
-                      ? value?.country == "USA"
+                      ? value?.country === "USA"
                       : value?.country}
                     <span>
                       <IoLocationOutline />

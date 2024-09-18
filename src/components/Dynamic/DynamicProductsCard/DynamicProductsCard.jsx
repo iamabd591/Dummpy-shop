@@ -1,13 +1,11 @@
 import Rating from "react-rating";
 import "./DynamicProductsCard.css";
-import { FaArrowRight } from "react-icons/fa6";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import { useEffect, useState } from "react";
+import { FaArrowRight } from "react-icons/fa6";
+import { HiOutlineArrowLongRight } from "react-icons/hi2";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 const DynamicProductsCard = ({ products, fakeApiProducts }) => {
-  // console.log(fakeApiProducts);
-  // console.log(products);
   const [sliceData, setSliceData] = useState([]);
 
   const getRandomIndex = (arr) => {

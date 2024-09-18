@@ -7,8 +7,8 @@
 
 .header {
   height: 50px;
-  color: #fff;
   display: flex;
+  color: #fff;
   align-items: center;
   background-color: #1b6392;
   padding: 40px 30px 30px 30px;
@@ -19,8 +19,8 @@
 }
 .header-right {
   display: flex;
-  justify-content: left;
   align-items: center;
+  justify-content: left;
 }
 .header-right .header-iocns p {
   font-size: 15px;
@@ -31,8 +31,8 @@
   cursor: pointer;
 }
 .header-right .divider {
-  height: 15px;
   width: 1px;
+  height: 15px;
   background-color: #fff;
 }
 .header-languages {
@@ -46,8 +46,8 @@
 
 .header-lower {
   height: 80px;
-  color: #fff;
   display: flex;
+  color: #fff;
   align-items: center;
   background-color: #1b6392;
   padding: 40px 30px 30px 30px;
@@ -66,8 +66,8 @@
 }
 .header-lower .serach-bar .product-search {
   width: 100%;
-  height: 50px;
   border: none;
+  height: 50px;
   outline: none;
   padding-left: 10px;
 }
@@ -75,8 +75,8 @@
   top: 0px;
   right: 10px;
   border: none;
-  font-size: 30px;
   cursor: pointer;
+  font-size: 30px;
   position: absolute;
   background: transparent;
 }
@@ -87,8 +87,8 @@
 }
 
 .header-lower .user-icons p {
-  cursor: pointer;
   font-size: 30px;
+  cursor: pointer;
   margin-right: 10px;
 }
 .header-nav {
@@ -115,20 +115,20 @@ ul li p {
 }
 
 ul li p span {
-  font-size: 20px;
   gap: 10px;
-  margin-left: 5px;
   cursor: pointer;
+  font-size: 20px;
+  margin-left: 5px;
 }
 .header-nav .user-nav .user-nav-list .category {
-  background: #dadada;
   padding: 10px;
   margin-top: 12px;
+  background: #dadada;
 }
 .header-nav .help p {
+  cursor: pointer;
   font-size: 16px;
   margin-left: 5px;
-  cursor: pointer;
 }
 .header-nav .help p span {
   font-size: 20px;

@@ -23,10 +23,10 @@
   margin-left: 50px;
 }
 .left-banner-lable {
-  color: #fff;
-  height: 25px;
   padding: 4px;
   width: 100px;
+  height: 25px;
+  color: #fff;
   text-align: center;
   background-color: #007ad1;
 }
@@ -53,9 +53,9 @@
 }
 .left-banner-button > button {
   border: none;
-  outline: none;
-  width: 150px;
   height: 40px;
+  width: 150px;
+  outline: none;
   cursor: pointer;
   background-color: #ff7700;
 }
@@ -111,8 +111,8 @@
   padding-top: 14px;
 }
 .right-banner-title > h4 {
-  font-size: 32px;
   color: #fff;
+  font-size: 32px;
 }
 .right-banner-description {
   width: 280px;
@@ -124,16 +124,16 @@
   text-align: justify;
 }
 .right-banner-button > button {
+  height: 40px;
+  width: 150px;
   border: none;
   outline: none;
-  width: 150px;
-  height: 40px;
   cursor: pointer;
   background-color: #ff7700;
 }
 .right-banner-button > button > p {
-  color: #fff;
   padding: 4px;
+  color: #fff;
   font-size: 16px;
 }
 .right-banner-button > button > p > span {
@@ -154,8 +154,8 @@
 .right-banner-image-price {
   top: 4%;
   right: 8%;
-  height: 80px;
   width: 80px;
+  height: 80px;
   border-radius: 50%;
   position: absolute;
   background-color: #2da5f3;

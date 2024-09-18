@@ -1,3 +1,8 @@
+import "./Header.css";
+import React from "react";
+import {} from "react-icons/io";
+import { BiPhoneCall } from "react-icons/bi";
+import { FaXTwitter } from "react-icons/fa6";
 import {
   FaFacebook,
   FaDiscord,
@@ -18,11 +23,6 @@ import {
   IoMdHelpCircleOutline,
   IoIosArrowDown,
 } from "react-icons/io";
-import {} from "react-icons/io";
-import { FaXTwitter } from "react-icons/fa6";
-import { BiPhoneCall } from "react-icons/bi";
-import React from "react";
-import "./Header.css";
 const Header = () => {
   return (
     <>
@@ -55,8 +55,6 @@ const Header = () => {
               </span>
             </p>
           </div>
-          {/* <div className="divider"></div> */}
-
           <div className="header-languages">
             <div>
               <p>
