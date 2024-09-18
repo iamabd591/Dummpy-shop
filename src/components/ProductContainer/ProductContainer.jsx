@@ -17,25 +17,32 @@ const ProductContainer = () => {
       <div className="product-card-main">
         {data?.products?.map((item, ind) => (
           <div className="product-card" key={ind}>
-            {item.availabilityStatus === "In Stock" ? (
-              <p className="lable-sold">{item.availabilityStatus}</p>
+            {item?.availabilityStatus === "In Stock" ? (
+              <p className="lable-sold">{item?.availabilityStatus}</p>
             ) : (
-              <p className="lable-hot">{item.availabilityStatus}</p>
+              <p className="lable-hot">{item?.availabilityStatus}</p>
             )}
             {/* <p className="lable-hot">HOT</p>*/}
             {item?.discountPercentage ? (
-              <p className="lable-discount">{item.discountPercentage}% OFF</p>
+              <p className="lable-discount">{item?.discountPercentage}% OFF</p>
             ) : (
               <p>Not discount available</p>
             )}
             <p></p>
             <center className="image">
-              <img
-                src={item.thumbnail}
-                alt={item.title}
-                height={"150px"}
-                width={"150px"}
-              />
+              <a
+                href={`/product-info/${item?.id}-${item?.title
+                  .replace(/\s+/g, "-")
+                  .toLowerCase()}`}
+                // href={`/product-info/${item?.id}`}
+              >
+                <img
+                  src={item?.thumbnail}
+                  alt={item?.title}
+                  height={"150px"}
+                  width={"150px"}
+                />
+              </a>
             </center>
             <div className="star">
               <h6>Rating</h6>
@@ -54,12 +61,12 @@ const ProductContainer = () => {
             </div>
             <div className="price">
               <h6>Price</h6>
-              <p>${item.price}</p>
+              <p>${item?.price}</p>
               <span>
-                {item && item.price && item.discountPercentage ? (
+                {item && item?.price && item?.discountPercentage ? (
                   `$${(
-                    item.price -
-                    item.price * (item.discountPercentage / 100)
+                    item?.price -
+                    item?.price * (item?.discountPercentage / 100)
                   ).toFixed(2)}`
                 ) : (
                   <p>No discount available</p>

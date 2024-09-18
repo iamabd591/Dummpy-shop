@@ -5,7 +5,7 @@ import { CgCalendarDates } from "react-icons/cg";
 import { HiArrowLongRight } from "react-icons/hi2";
 import { IoLocationOutline } from "react-icons/io5";
 const NewsCard = ({ news }) => {
-  console.log(news);
+  // console.log(news);
   if (!news) return null;
   const [sliceData, setSliceData] = useState([]);
 

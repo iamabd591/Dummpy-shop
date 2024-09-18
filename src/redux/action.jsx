@@ -56,6 +56,7 @@ export const getProductsById = (id) => async (dispatch) => {
     const productById = await getRequestById({
       url: `https://dummyjson.com/products/${id}`,
     });
+    // console.log(productById);
     dispatch(
       success({ type: "GET_PRODUCTS_SUCCESS_BY_ID", payload: productById })
     );
