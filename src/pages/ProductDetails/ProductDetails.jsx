@@ -1,39 +1,11 @@
 // import "./ProductDetails.css";
-import Rating from "react-rating";
-import { useParams } from "react-router";
-import React, { useEffect, useState } from "react";
-import { getProductsById } from "../../redux/action";
-import { useSelector, useDispatch } from "react-redux";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+
 import Header from "../../components/Header/Header";
 import Product from "./Product/Product";
 import Catagory from "../../components/Catagory/Catagory";
 import Footer from "../../components/Footer/Footer";
 
 function ProductDetails() {
-  const { id } = useParams();
-  const productId = id.split("-")[0];
-  console.log(productId);
-  const dispatch = useDispatch();
-  const [rating, setRating] = useState(0);
-  const ProdcutById = useSelector((state) => state.productById);
-  const loader = useSelector((state) => state.loader);
-
-  const handleRating = (rating) => {
-    setRating(rating);
-  };
-
-  useEffect(() => {
-    if (!id) {
-      console.log("Product is not found");
-    }
-    dispatch(getProductsById(id));
-  }, [dispatch, id]);
-
-  useEffect(() => {
-    console.log(loader);
-  }, [loader]);
-  console.log(ProdcutById);
   return (
     <>
       <Header />
