@@ -47,7 +47,9 @@ const userSignIn = () => {
             <div className="other-sign">
               <p>or</p>
               <div className="google-sign">
-                <p>Create An Account</p>
+                <a href="/sign-up">
+                  <p>Create An Account</p>
+                </a>
               </div>
               <div className="google-sign">
                 <p>

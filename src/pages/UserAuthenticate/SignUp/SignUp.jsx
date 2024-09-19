@@ -1,7 +1,16 @@
 import React from "react";
+import UserSignUp from "./UserSignUp";
+import Header from "../../../components/Header/Header";
+import Footer from "../../../components/Footer/Footer";
 
 const SignUp = () => {
-  return <div></div>;
+  return (
+    <>
+      <Header />
+      <UserSignUp />
+      <Footer />
+    </>
+  );
 };
 
 export default SignUp;
