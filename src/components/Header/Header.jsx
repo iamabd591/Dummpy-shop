@@ -99,7 +99,9 @@ const Header = () => {
             <CiHeart />
           </p>
           <p>
-            <CiUser />
+            <a href="./sign-in">
+              <CiUser />
+            </a>
           </p>
         </div>
       </div>

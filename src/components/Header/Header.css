@@ -14,7 +14,7 @@
   padding: 40px 30px 30px 30px;
   justify-content: space-around;
 }
-.header .text p {
+.header > .text > p {
   font-size: 15px;
 }
 .header-right {
@@ -22,15 +22,15 @@
   align-items: center;
   justify-content: left;
 }
-.header-right .header-iocns p {
+.header-right > .header-iocns > p {
   font-size: 15px;
   margin-right: 5px;
 }
-.header-right .header-iocns p span {
+.header-right > .header-iocns > p > span {
   margin: 10px;
   cursor: pointer;
 }
-.header-right .divider {
+.header-right > .divider {
   width: 1px;
   height: 15px;
   background-color: #fff;
@@ -40,7 +40,7 @@
   align-items: center;
   justify-content: space-around;
 }
-.header-languages div p {
+.header-languages > div > p {
   margin-right: 20px;
 }
 
@@ -53,14 +53,14 @@
   padding: 40px 30px 30px 30px;
   justify-content: space-around;
 }
-.header-lower .logo {
+.header-lower > .logo {
   width: 15%;
   height: auto;
 }
-.header-lower .logo img {
+.header-lower > .logo > img {
   width: 80%;
 }
-.header-lower .serach-bar {
+.header-lower > .serach-bar {
   width: 40%;
   position: relative;
 }
@@ -80,16 +80,20 @@
   position: absolute;
   background: transparent;
 }
-.header-lower .user-icons {
+.header-lower > .user-icons {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.header-lower .user-icons p {
+.header-lower > .user-icons > p {
   font-size: 30px;
   cursor: pointer;
   margin-right: 10px;
+}
+.header-lower > .user-icons > p > a {
+  color: #fff;
+  text-decoration: none;
 }
 .header-nav {
   display: flex;
