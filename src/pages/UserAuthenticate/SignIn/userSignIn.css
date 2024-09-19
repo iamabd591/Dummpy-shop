@@ -8,7 +8,7 @@
 }
 .userSignIn-card {
   width: 500px;
-  height: 600px;
+  height: 630px;
   display: flex;
   padding: 18px 26px;
   justify-content: center;
@@ -42,14 +42,16 @@ h4 {
   padding: 20px;
   outline: none;
   font-size: 14px;
-  position: relative;
   border: 1px solid #a9a9a9;
+}
+form {
+  position: relative;
 }
 .eye-icon {
   position: absolute;
-  top: 31.5%;
-  right: 35%;
-  font-size: 18px;
+  top: 50%;
+  right: 5%;
+  font-size: 20px;
   cursor: pointer;
 }
 .forgot-password {

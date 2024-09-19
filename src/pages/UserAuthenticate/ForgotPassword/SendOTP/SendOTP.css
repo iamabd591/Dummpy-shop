@@ -8,7 +8,7 @@
 }
 .send-otp-card {
   width: 500px;
-  height: 450px;
+  height: 500px;
   display: flex;
   padding: 18px 26px;
   justify-content: center;
@@ -44,8 +44,8 @@
 .email-form > h6 {
   height: 20px;
   font-size: 14px;
-  padding-left: 10px;
   color: #191c1f;
+  padding-left: 10px;
 }
 .input-field {
   width: 100%;
@@ -73,4 +73,32 @@ button > p {
 button > p > span {
   font-size: 20px;
   cursor: pointer;
+}
+.other-links {
+  width: 100%;
+  height: 50px;
+}
+.other-links > p {
+  width: 100%;
+  font-size: 14px;
+  /* font-weight: bold; */
+}
+.other-links > p > a {
+  font-size: 14px;
+  margin-left: 5px;
+  color: #3c7aff;
+  transition: 0.5 all;
+}
+.other-links > p > a:hover {
+  text-decoration: underline;
+}
+.term-and-service {
+  width: 100%;
+}
+.term-and-service > p {
+  font-size: 16px;
+}
+.term-and-service > p > a {
+  cursor: pointer;
+  color: #fa8232;
 }

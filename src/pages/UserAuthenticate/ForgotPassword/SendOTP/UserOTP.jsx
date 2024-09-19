@@ -38,17 +38,17 @@ const UserOTP = () => {
             </div>
             <div className="other-links">
               <p>
-                Already have account?<span>Sign In</span>
+                Already have account?<a href="/sign-in">Sign In</a>
               </p>
               <p>
-                Don’t have account?<span>Sign Up</span>
+                Don’t have account?<a href="/sign-up">Sign Up</a>
               </p>
             </div>
             <hr />
-            <div className="term-&-service">
+            <div className="term-and-service">
               <p>
-                You may contact <span>Customer Service</span> for help restoring
-                access to your account.
+                You may contact <a href="/">Customer Service</a> for help
+                restoring access to your account.
               </p>
             </div>
           </div>
