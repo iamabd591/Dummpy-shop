@@ -1,5 +1,5 @@
 import React from "react";
-import userSignIn from "./userSignIn";
+import UserSignIn from "./UserSignIn";
 import Header from "../../../components/Header/Header";
 import Footer from "../../../components/Footer/Footer";
 
@@ -7,7 +7,7 @@ const SignIn = () => {
   return (
     <>
       <Header />
-      <userSignIn />
+      <UserSignIn />
       <Footer />
     </>
   );
