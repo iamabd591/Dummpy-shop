@@ -57,26 +57,26 @@
   width: 15%;
   height: auto;
 }
-.header-lower > .logo > img {
+/* .header-lower > .logo > a > img {
   width: 80%;
-}
-.header-lower > .serach-bar {
+} */
+.header-lower .serach-bar {
   width: 40%;
-  position: relative;
 }
-.header-lower .serach-bar .product-search {
+.header-lower .serach-bar form .product-search {
   width: 100%;
-  border: none;
   height: 50px;
+  border: none;
   outline: none;
+  position: relative;
   padding-left: 10px;
 }
-.serach-bar button {
-  top: 0px;
-  right: 10px;
+.serach-bar form .searchBtn {
+  right: 1%;
+  width: 50px;
   border: none;
-  cursor: pointer;
   font-size: 30px;
+  cursor: pointer;
   position: absolute;
   background: transparent;
 }

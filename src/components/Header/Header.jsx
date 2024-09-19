@@ -73,7 +73,9 @@ const Header = () => {
 
       <div className="header-lower">
         <div className="logo">
-          <img src="./Logo.png" alt="logo" />
+          <a href="/">
+            <img src="./Logo.png" alt="logo" />
+          </a>
         </div>
         <div className="serach-bar">
           <form action="">
@@ -84,10 +86,8 @@ const Header = () => {
               max={30}
               className="product-search"
             />
-            <button>
-              <p>
-                <CiSearch />
-              </p>
+            <button className="searchBtn">
+              <CiSearch />
             </button>
           </form>
         </div>
