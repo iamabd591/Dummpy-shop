@@ -1,0 +1,98 @@
+.user-sign-up-main {
+  width: 100%;
+  height: 135vh;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+}
+.user-sign-up-card {
+  width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.sign-up-form {
+  width: 500px;
+  height: 75%;
+  display: flex;
+  padding: 28px 12px;
+  flex-direction: column;
+}
+.user-sign-up-heading {
+  width: 100%;
+  height: 70px;
+}
+.user-sign-up-heading > h2 {
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+Form > h6 {
+  width: 100%;
+  height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 15px;
+}
+
+.input-field {
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid #cecece;
+}
+
+.checkbox {
+  width: 100%;
+  height: 40px;
+  margin-left: 5px;
+  padding-top: 15px;
+}
+.checkbox > p {
+  display: inline;
+  font-size: 16px;
+  margin-left: 12px;
+}
+.checkbox > p > span {
+  cursor: pointer;
+  color: #fa8232;
+}
+button {
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+/* button > span {
+  font-size: 26px;
+} */
+.other-links {
+  height: 25%;
+  width: 500px;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+}
+.other-links > p {
+  font-size: 14px;
+  width: 100%;
+  height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.third-party-sign-up {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  cursor: pointer;
+  margin-top: 5px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cecece;
+}
+.third-party-sign-up > p {
+  font-size: 18px;
+  padding-top: 10px;
+}
