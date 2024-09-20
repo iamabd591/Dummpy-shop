@@ -1,10 +1,33 @@
 import "./SignUp.css";
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Field, Form, Formik } from "formik";
+import { Field, Form, Formik, useFormik } from "formik";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { TbBrandAppleFilled } from "react-icons/tb";
+import { SignUpSchema } from "../VlidationSchema";
+
+const onSubmit = (values, actions) => {
+  console.log(values);
+};
 const UserSignUp = () => {
+  const {
+    values,
+    errors,
+    touched,
+    handleBlur,
+    handleChange,
+    handleSubmit,
+    isSubmitting,
+  } = useFormik({
+    initialValues: {
+      namr: "",
+      email: "",
+      password: "",
+      confrimPassword: "",
+    },
+    validationSchema: SignUpSchema,
+    onSubmit,
+  });
   return (
     <>
       <div className="user-sign-up-main">
@@ -14,35 +37,83 @@ const UserSignUp = () => {
               <h2>Sign up</h2>
             </div>
             <Formik>
-              <Form>
+              <Form autoComplete="off" onSubmit={handleSubmit}>
                 <h6>Name</h6>
                 <Field
                   type="text"
                   name="name"
+                  value={values?.name}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
                   placeholder="Your Name"
                   className="input-field"
                 />
+                <p
+                  className={
+                    errors?.name || touched?.name
+                      ? "input-error"
+                      : "display-none"
+                  }
+                >
+                  {errors?.name}
+                </p>
                 <h6>Email</h6>
                 <Field
                   type="text"
-                  name="name"
+                  name="email"
+                  value={values?.email}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
                   placeholder="Your Email"
                   className="input-field"
                 />
+                <p
+                  className={
+                    errors?.email || touched?.email
+                      ? "input-error"
+                      : "display-none"
+                  }
+                >
+                  {errors?.email}
+                </p>
                 <h6>Password</h6>
                 <Field
                   type="password"
-                  name="name"
+                  name="password"
+                  value={values?.password}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
                   placeholder="Your Password"
                   className="input-field"
                 />
+                <p
+                  className={
+                    errors?.password || touched?.password
+                      ? "input-error"
+                      : "display-none"
+                  }
+                >
+                  {errors?.password}
+                </p>
                 <h6>Confrim Password</h6>
                 <Field
                   type="password"
-                  name="name"
+                  name="confrimPassword"
+                  value={values?.confrimPassword}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
                   placeholder="Confrim Password"
                   className="input-field"
                 />
+                <p
+                  className={
+                    errors?.confrimPassword || touched?.confrimPassword
+                      ? "input-error"
+                      : "display-none"
+                  }
+                >
+                  {errors?.confrimPassword}
+                </p>
                 <p className="checkbox">
                   <Field type="checkbox" />
                   <p>

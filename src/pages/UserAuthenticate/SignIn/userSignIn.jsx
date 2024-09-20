@@ -14,7 +14,7 @@ const onSubmit = async (values, actions) => {
     console.log(values);
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    toast.success("Submitted Successfully!", {
+    toast.success("Sign In Successfully!", {
       autoClose: 5000,
       pauseOnHover: true,
       bodyClassName: "toast-body",

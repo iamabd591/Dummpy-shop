@@ -149,6 +149,7 @@ form {
 .input-error {
   width: 100%;
   color: #ff0808;
+  text-transform: capitalize;
 }
 .toast-success {
   color: #52ff0e !important;
