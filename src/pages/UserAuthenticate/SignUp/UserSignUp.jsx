@@ -1,11 +1,12 @@
 import "./SignUp.css";
-import React from "react";
+import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Field, Form, Formik, useFormik } from "formik";
-import { FaArrowRightLong } from "react-icons/fa6";
-import { TbBrandAppleFilled } from "react-icons/tb";
 import { SignUpSchema } from "../VlidationSchema";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { TbBrandAppleFilled } from "react-icons/tb";
 import { toast, ToastContainer } from "react-toastify";
+import { Field, Form, Formik, useFormik } from "formik";
 
 const onSubmit = async (values, actions) => {
   console.log(values);
@@ -26,6 +27,9 @@ const onSubmit = async (values, actions) => {
   }
 };
 const UserSignUp = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfrimPassword, setShowConfrimPassword] = useState(false);
+
   const {
     values,
     errors,
@@ -45,6 +49,13 @@ const UserSignUp = () => {
     validationSchema: SignUpSchema,
     onSubmit,
   });
+  const toggolePassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggoleConfrimPassword = () => {
+    setShowConfrimPassword(!showConfrimPassword);
+  };
   return (
     <>
       <div className="user-sign-up-main">
@@ -94,15 +105,20 @@ const UserSignUp = () => {
                   {errors?.email}
                 </p>
                 <h6>Password</h6>
-                <Field
-                  type="password"
-                  name="password"
-                  value={values?.password}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  placeholder="Your Password"
-                  className="input-field"
-                />
+                <div className="password-wrapper">
+                  <Field
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    value={values?.password}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder="Your Password"
+                    className="input-field"
+                  />
+                  <span className="sign-up-eye-icon" onClick={toggolePassword}>
+                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                  </span>
+                </div>
                 <p
                   className={
                     errors?.password && touched?.password
@@ -112,16 +128,25 @@ const UserSignUp = () => {
                 >
                   {errors?.password}
                 </p>
-                <h6>Confrim Password</h6>
-                <Field
-                  type="password"
-                  name="confrimPassword"
-                  value={values?.confrimPassword}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  placeholder="Confrim Password"
-                  className="input-field"
-                />
+
+                <h6>Confirm Password</h6>
+                <div className="password-wrapper">
+                  <Field
+                    type={showConfrimPassword ? "text" : "password"}
+                    name="confrimPassword"
+                    value={values?.confrimPassword}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder="Confirm Password"
+                    className="input-field"
+                  />
+                  <span
+                    className="sign-up-eye-icon"
+                    onClick={toggoleConfrimPassword}
+                  >
+                    {showConfrimPassword ? <FaEyeSlash /> : <FaEye />}
+                  </span>
+                </div>
                 <p
                   className={
                     errors?.confrimPassword && touched?.confrimPassword

@@ -1,8 +1,8 @@
 .user-sign-up-main {
   width: 100%;
-  min-height: 100vh;
-  padding: 10px;
   display: flex;
+  padding: 10px;
+  min-height: 100vh;
   align-items: center;
   justify-content: center;
   background-color: #fff;
@@ -29,8 +29,8 @@
 .user-sign-up-heading > h2 {
   font-size: 26px;
   font-weight: bold;
-  text-transform: capitalize;
   margin-bottom: 20px;
+  text-transform: capitalize;
 }
 
 Form > h6 {
@@ -42,34 +42,40 @@ Form > h6 {
 
 form .input-field {
   width: 100%;
-  font-size: 14px;
-  border: 1px solid #cecece;
-  margin-bottom: 10px;
   padding: 8px;
+  font-size: 14px;
   border-radius: 4px;
+  margin-bottom: 10px;
+  border: 1px solid #cecece;
 }
 
 form .check-box {
+  top: 7px;
+  left: 0px;
+  margin-top: 8px;
   margin-right: 10px;
+  position: absolute;
 }
 
 .checkbox-text {
-  font-size: 14px;
   padding: 10px 0;
-  align-items: center;
+  font-size: 16px;
+  text-align: center;
+  position: relative;
+  text-transform: capitalize;
 }
 
 .signupbtn {
   width: 100%;
+  border: none;
   color: #fff;
+  padding: 10px;
+  cursor: pointer;
   font-size: 18px;
+  border-radius: 4px;
+  margin-bottom: 10px;
   text-transform: uppercase;
   background-color: #fa8232;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-  margin-bottom: 10px; /* Reduced the margin at the bottom */
 }
 
 .signupbtn:hover {
@@ -79,17 +85,17 @@ form .check-box {
 .Sign-up-other-links {
   width: 100%;
   display: flex;
+  padding: 10px 0;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 10px 0; /* Reduced padding from 10px to 0 at the top */
 }
 
 .create-account > p {
   font-size: 14px;
+  margin-top: 5px;
   text-align: center;
   text-transform: capitalize;
-  margin-top: 5px; /* Reduced top margin */
 }
 
 .create-account > p > a > span {
@@ -103,33 +109,48 @@ form .check-box {
 .other {
   text-align: center;
   text-transform: uppercase;
-  margin: 10px 0; /* Reduced gap between "or" and third-party links */
+  margin: 10px 0;
 }
 
 .third-party-sign-up {
   width: 100%;
   height: auto;
   display: flex;
+  padding: 10px;
+  margin-top: 5px;
   cursor: pointer;
   align-items: center;
   justify-content: center;
   border: 1px solid #cecece;
-  margin-top: 5px; /* Reduced margin at the top */
-  padding: 10px;
 }
 
 .third-party-sign-up > p {
-  font-size: 18px;
   margin: 0;
+  font-size: 18px;
 }
 
 .input-error {
   width: 100%;
+  margin-top: 5px;
   color: #ff0808;
   text-transform: capitalize;
-  margin-top: 5px;
 }
 
 .display-none {
   display: none;
+}
+.checkbox-text > p > span {
+  cursor: pointer;
+  color: #e5711f;
+}
+.password-wrapper {
+  position: relative;
+}
+
+.sign-up-eye-icon {
+  top: 15px;
+  right: 25px;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
 }

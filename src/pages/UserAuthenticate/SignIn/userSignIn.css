@@ -7,8 +7,8 @@
   background-color: #fff;
 }
 .userSignIn-card {
-  width: 500px;
   height: 90%;
+  width: 500px;
   display: flex;
   padding: 18px 26px;
   justify-content: center;
@@ -23,8 +23,8 @@
   font-weight: bold;
 }
 .sign-form {
-  padding-top: 20px;
   display: flex;
+  padding-top: 20px;
   justify-content: center;
   flex-direction: column;
 }
@@ -48,11 +48,11 @@ form {
   position: relative;
 }
 .eye-icon {
-  position: absolute;
-  top: 50%;
-  right: 5%;
-  font-size: 20px;
+  top: 160px;
+  right: 25px;
   cursor: pointer;
+  font-size: 20px;
+  position: absolute;
 }
 .forgot-password {
   padding-top: 12px;
