@@ -69,12 +69,12 @@ const UserSignIn = () => {
               />
               <p
                 className={
-                  errors?.email || touched?.email
+                  errors?.email && touched?.email
                     ? "input-error"
                     : "display-none"
                 }
               >
-                {errors?.email || touched?.email || errors?.email}
+                {errors?.email}
               </p>
 
               <h4>Password</h4>
@@ -90,12 +90,12 @@ const UserSignIn = () => {
               />
               <p
                 className={
-                  errors?.password || touched?.password
+                  errors?.password && touched?.password
                     ? "input-error"
                     : "display-none"
                 }
               >
-                {errors?.password || touched?.password || errors?.password}
+                {errors?.password}
               </p>
 
               <p className="eye-icon" onClick={toggoleVisiblity}>

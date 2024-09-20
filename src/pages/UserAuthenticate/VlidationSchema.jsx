@@ -22,6 +22,10 @@ export const SignUpSchema = yup.object().shape({
     .string()
     .oneOf([yup.ref("password"), null], "Password must be matched")
     .required("Required"),
+  termsAndConditions: yup
+    .boolean()
+    .oneOf([true], "You must accept the Terms and Conditions")
+    .required("Required"),
 });
 
 export const SendOtpSchema = yup.object().shape({

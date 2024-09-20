@@ -5,9 +5,25 @@ import { Field, Form, Formik, useFormik } from "formik";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { TbBrandAppleFilled } from "react-icons/tb";
 import { SignUpSchema } from "../VlidationSchema";
+import { toast, ToastContainer } from "react-toastify";
 
-const onSubmit = (values, actions) => {
+const onSubmit = async (values, actions) => {
   console.log(values);
+  try {
+    console.log(values);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    toast.success("Sign Up Successfully!", {
+      autoClose: 5000,
+      pauseOnHover: true,
+      bodyClassName: "toast-body",
+      className: "toast-success custom-toast-container",
+    });
+
+    actions.resetForm();
+  } catch (error) {
+    toast.error("Something Went Wrong!");
+  }
 };
 const UserSignUp = () => {
   const {
@@ -20,10 +36,11 @@ const UserSignUp = () => {
     isSubmitting,
   } = useFormik({
     initialValues: {
-      namr: "",
+      name: "",
       email: "",
       password: "",
       confrimPassword: "",
+      termsAndConditions: false,
     },
     validationSchema: SignUpSchema,
     onSubmit,
@@ -50,7 +67,7 @@ const UserSignUp = () => {
                 />
                 <p
                   className={
-                    errors?.name || touched?.name
+                    errors?.name && touched?.name
                       ? "input-error"
                       : "display-none"
                   }
@@ -69,7 +86,7 @@ const UserSignUp = () => {
                 />
                 <p
                   className={
-                    errors?.email || touched?.email
+                    errors?.email && touched?.email
                       ? "input-error"
                       : "display-none"
                   }
@@ -88,7 +105,7 @@ const UserSignUp = () => {
                 />
                 <p
                   className={
-                    errors?.password || touched?.password
+                    errors?.password && touched?.password
                       ? "input-error"
                       : "display-none"
                   }
@@ -107,21 +124,30 @@ const UserSignUp = () => {
                 />
                 <p
                   className={
-                    errors?.confrimPassword || touched?.confrimPassword
+                    errors?.confrimPassword && touched?.confrimPassword
                       ? "input-error"
                       : "display-none"
                   }
                 >
                   {errors?.confrimPassword}
                 </p>
-                <p className="checkbox">
-                  <Field type="checkbox" />
+                <div className="checkbox-text">
                   <p>
-                    Are you agree to Clicon <span>Terms of Condition</span> and
+                    <Field
+                      type="checkbox"
+                      name="termsAndConditions"
+                      checked={values.termsAndConditions}
+                      onChange={handleChange}
+                      className="check-box"
+                    />
+                    I agree to the Clicon <span>Terms of Condition</span> and
                     <span> Privacy Policy</span>.
                   </p>
-                </p>
-                <button>
+                </div>
+                {errors?.termsAndConditions && touched?.termsAndConditions && (
+                  <p className="input-error">{errors.termsAndConditions}</p>
+                )}
+                <button disabled={isSubmitting} className="signupbtn">
                   Sign up{" "}
                   <sapn>
                     <FaArrowRightLong />
@@ -130,15 +156,16 @@ const UserSignUp = () => {
               </Form>
             </Formik>
           </div>
-          <div className="other-links">
-            <p>
-              Already Have An Account?{" "}
-              <a href="/sign-in">
-                <span>Sign In</span>
-              </a>
-            </p>
-            <p>or</p>
-
+          <div className="Sign-up-other-links">
+            <p className="other">or</p>
+            <div className="create-account">
+              <p>
+                Already Have An Account?{" "}
+                <a href="/sign-in">
+                  <span>Sign In</span>
+                </a>
+              </p>
+            </div>
             <div className="third-party-sign-up">
               <p>
                 Sign up with google{" "}
@@ -147,7 +174,6 @@ const UserSignUp = () => {
                 </span>
               </p>
             </div>
-
             <div className="third-party-sign-up">
               <p>
                 Sign up with apple{" "}
@@ -158,6 +184,7 @@ const UserSignUp = () => {
             </div>
           </div>
         </div>
+        <ToastContainer />
       </div>
     </>
   );
