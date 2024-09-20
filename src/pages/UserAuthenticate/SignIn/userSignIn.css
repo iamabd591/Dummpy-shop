@@ -135,3 +135,19 @@ form {
   font-size: 20px;
   margin-left: 10px;
 }
+.input-error {
+  width: 100%;
+  color: #ff0808;
+}
+.toast-success {
+  color: #52ff0e !important;
+  background-color: #fefffe !important;
+}
+
+.toast-body {
+  width: 100%;
+  color: #000000 !important;
+}
+.custom-toast-container {
+  width: 400px;
+}
