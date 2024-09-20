@@ -99,7 +99,7 @@ const Header = () => {
             <CiHeart />
           </p>
           <p>
-            <a href="./sign-in">
+            <a href="/sign-in">
               <CiUser />
             </a>
           </p>

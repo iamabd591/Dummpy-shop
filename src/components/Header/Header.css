@@ -77,6 +77,7 @@
   border: none;
   font-size: 30px;
   cursor: pointer;
+  color: #000;
   position: absolute;
   background: transparent;
 }

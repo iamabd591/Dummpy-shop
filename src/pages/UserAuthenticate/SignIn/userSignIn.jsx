@@ -1,11 +1,11 @@
-import React from "react";
 import "./userSignIn.css";
 import { useFormik } from "formik";
-import { FaEye } from "react-icons/fa";
+import React, { useState } from "react";
 import { FaApple } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import "react-toastify/dist/ReactToastify.css";
 import { SignInSchema } from "../VlidationSchema";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 
@@ -28,6 +28,7 @@ const onSubmit = async (values, actions) => {
 };
 
 const UserSignIn = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const {
     values,
     errors,
@@ -45,6 +46,9 @@ const UserSignIn = () => {
     onSubmit,
   });
 
+  const toggoleVisiblity = () => {
+    setShowPassword(!showPassword);
+  };
   return (
     <div className="userSignIn-main">
       <div className="userSignIn-card">
@@ -64,14 +68,18 @@ const UserSignIn = () => {
                 className="input-field"
               />
               <p
-                className={errors?.email || touched?.email ? "input-error" : ""}
+                className={
+                  errors?.email || touched?.email
+                    ? "input-error"
+                    : "display-none"
+                }
               >
                 {errors?.email || touched?.email || errors?.email}
               </p>
 
               <h4>Password</h4>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="password"
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -82,17 +90,19 @@ const UserSignIn = () => {
               />
               <p
                 className={
-                  errors?.password || touched?.password ? "input-error" : ""
+                  errors?.password || touched?.password
+                    ? "input-error"
+                    : "display-none"
                 }
               >
                 {errors?.password || touched?.password || errors?.password}
               </p>
 
-              <p className="eye-icon">
-                <FaEye />
+              <p className="eye-icon" onClick={toggoleVisiblity}>
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
               </p>
               <p className="forgot-password">
-                <a href="./forgot-password/send-otp">Forgot Password</a>
+                <a href="/forgot-password/send-otp">Forgot Password?</a>
               </p>
 
               <button
@@ -110,7 +120,7 @@ const UserSignIn = () => {
 
           <div className="other-sign">
             <p>or</p>
-            <div className="google-sign">
+            <div className="create-account">
               <a href="/sign-up">
                 <p>Create An Account</p>
               </a>

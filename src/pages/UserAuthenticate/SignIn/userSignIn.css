@@ -1,6 +1,6 @@
 .userSignIn-main {
   width: 100%;
-  height: 100vh;
+  height: 120vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,7 +8,7 @@
 }
 .userSignIn-card {
   width: 500px;
-  height: 630px;
+  height: 90%;
   display: flex;
   padding: 18px 26px;
   justify-content: center;
@@ -95,6 +95,17 @@ form {
   text-align: center;
   text-transform: uppercase;
 }
+.create-account {
+  width: 100%;
+  height: 50px;
+  margin-top: 5px;
+  padding-top: 10px;
+  text-align: center;
+  border: 1px solid #d6d6d6;
+}
+.create-account > a {
+  font-size: 16px;
+}
 .google-sign {
   width: 100%;
   height: 50px;
@@ -150,4 +161,7 @@ form {
 }
 .custom-toast-container {
   width: 400px;
+}
+.display-none {
+  display: none;
 }
