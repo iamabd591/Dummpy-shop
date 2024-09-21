@@ -17,13 +17,10 @@ const CustomeRoutes = () => {
           <Route path="/" element={<Home />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/send-otp" element={<SendOTP />} />
+          <Route path="/verify-otp" element={<VerifyOTP />} />
+          <Route path="/reset-password" element={<NewPassword />} />
           <Route path="product-info/:id" element={<ProductDetails />} />
-          <Route path="/forgot-password/send-otp" element={<SendOTP />} />
-          <Route path="/forgot-password/verify-otp" element={<VerifyOTP />} />
-          <Route
-            path="/forgot-password/reset-password"
-            element={<NewPassword />}
-          />
         </Route>
       </Routes>
     </BrowserRouter>

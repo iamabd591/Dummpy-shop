@@ -9,7 +9,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { Field, Form, Formik, useFormik } from "formik";
 
 const onSubmit = async (values, actions) => {
-  console.log(values);
+  // console.log(values);
   try {
     console.log(values);
     await new Promise((resolve) => setTimeout(resolve, 1000));

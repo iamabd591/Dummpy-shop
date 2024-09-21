@@ -58,14 +58,14 @@ const UserSignIn = () => {
             <form autoComplete="off" onSubmit={handleSubmit}>
               <h4>Email Address</h4>
               <input
+                id="email"
                 type="email"
                 name="email"
-                onChange={handleChange}
                 onBlur={handleBlur}
                 value={values?.email}
-                id="email"
-                placeholder="Enter Your Email"
+                onChange={handleChange}
                 className="input-field"
+                placeholder="Enter Your Email"
               />
               <p
                 className={
@@ -80,13 +80,13 @@ const UserSignIn = () => {
               <h4>Password</h4>
               <input
                 type={showPassword ? "text" : "password"}
-                name="password"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values?.password}
                 id="password"
-                placeholder="Enter Your Password"
+                name="password"
+                onBlur={handleBlur}
                 className="input-field"
+                onChange={handleChange}
+                value={values?.password}
+                placeholder="Enter Your Password"
               />
               <p
                 className={
@@ -102,7 +102,7 @@ const UserSignIn = () => {
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </p>
               <p className="forgot-password">
-                <a href="/forgot-password/send-otp">Forgot Password?</a>
+                <a href="/send-otp">Forgot Password?</a>
               </p>
 
               <button

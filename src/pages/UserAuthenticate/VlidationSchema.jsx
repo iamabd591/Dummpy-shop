@@ -36,7 +36,10 @@ export const SendOtpSchema = yup.object().shape({
 });
 
 export const VerifyOtpSchema = yup.object().shape({
-  number: yup.number("Please Valid OTP").required("Required"),
+  userOtp: yup
+    .string()
+    .required("Required")
+    .matches(/^\d{6}$/, "Please enter a valid 6-digit OTP"),
 });
 
 export const ResetPasswordSchema = yup.object().shape({
