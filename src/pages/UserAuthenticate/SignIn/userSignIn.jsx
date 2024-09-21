@@ -78,16 +78,22 @@ const UserSignIn = () => {
               </p>
 
               <h4>Password</h4>
-              <input
-                type={showPassword ? "text" : "password"}
-                id="password"
-                name="password"
-                onBlur={handleBlur}
-                className="input-field"
-                onChange={handleChange}
-                value={values?.password}
-                placeholder="Enter Your Password"
-              />
+              <div className="password-wrapper">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  name="password"
+                  onBlur={handleBlur}
+                  className="input-field"
+                  onChange={handleChange}
+                  value={values?.password}
+                  placeholder="Enter Your Password"
+                />
+                <p className="eye-icon" onClick={toggoleVisiblity}>
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </p>
+              </div>
+
               <p
                 className={
                   errors?.password && touched?.password
@@ -98,9 +104,6 @@ const UserSignIn = () => {
                 {errors?.password}
               </p>
 
-              <p className="eye-icon" onClick={toggoleVisiblity}>
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
-              </p>
               <p className="forgot-password">
                 <a href="/send-otp">Forgot Password?</a>
               </p>

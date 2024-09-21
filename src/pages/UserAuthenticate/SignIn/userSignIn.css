@@ -44,11 +44,11 @@ h4 {
   font-size: 14px;
   border: 1px solid #a9a9a9;
 }
-form {
+.password-wrapper {
   position: relative;
 }
 .eye-icon {
-  top: 186px;
+  top: 10px;
   right: 25px;
   cursor: pointer;
   font-size: 20px;

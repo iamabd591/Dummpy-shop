@@ -1,18 +1,35 @@
 import "./VerifyOTP.css";
 import React from "react";
 import { useFormik } from "formik";
+import "react-toastify/dist/ReactToastify.css";
+import { toast, ToastContainer } from "react-toastify";
+import { useNavigate, useLocation } from "react-router";
 import { VerifyOtpSchema } from "../../VlidationSchema";
-import { useLocation } from "react-router";
 
-const onSubmit = async (values, actions) => {
-  try {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log(values);
-  } catch (error) {
-    console.log(error);
-  }
-};
 const UserVerifyOTP = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const email = queryParams.get("email");
+
+  const onSubmit = async (values, actions) => {
+    try {
+      toast.success("OTP Verified Successfully!", {
+        autoClose: 5000,
+        pauseOnHover: true,
+        bodyClassName: "toast-body",
+        className: "toast-success custom-toast-container",
+        onClose: () => {
+          navigate("/reset-password");
+        },
+      });
+      actions.resetForm();
+    } catch (error) {
+      toast.error("Something Went Wrong!");
+      console.log(error);
+    }
+  };
+
   const {
     values,
     errors,
@@ -28,9 +45,7 @@ const UserVerifyOTP = () => {
     validationSchema: VerifyOtpSchema,
     onSubmit,
   });
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const email = queryParams.get("email");
+
   return (
     <>
       <div className="verified-otp-main">
@@ -69,11 +84,12 @@ const UserVerifyOTP = () => {
           </div>
           <div className="re-send-otp">
             <p>
-              Don’t Recived <span>Click Here</span>To Re-Send OTP
+              Don’t Recived <span>Click Here</span> To Re-Send OTP
             </p>
           </div>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };

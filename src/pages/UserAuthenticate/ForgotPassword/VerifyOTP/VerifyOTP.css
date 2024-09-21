@@ -8,7 +8,7 @@
 }
 .verified-otp-card {
   width: 500px;
-  height: 100%;
+  height: 80%;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -52,13 +52,13 @@
 }
 .verified-otp-form > form > button {
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
   margin-top: 20px;
 }
 .re-send-otp {
   width: 100%;
-  height: 100px;
+  /* height: 50px; */
 }
 .re-send-otp > p {
   font-size: 16px;

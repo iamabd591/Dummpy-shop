@@ -43,12 +43,12 @@ export const VerifyOtpSchema = yup.object().shape({
 });
 
 export const ResetPasswordSchema = yup.object().shape({
-  password: yup
+  newPassword: yup
     .string()
     .matches(passwordRegx, { message: "Please Enter Strong Password" })
     .required("Required"),
-  confrimPasword: yup
+  confrimNewPassword: yup
     .string()
-    .oneOf([yup.ref("password"), null], "Password must be matched")
+    .oneOf([yup.ref("newPassword"), null], "Password must be matched")
     .required("Required"),
 });
