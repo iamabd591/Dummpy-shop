@@ -35,6 +35,7 @@ const initialState = {
   news: [],
   newsById: {},
   searchQuery: "",
+  SearchProducts: [],
 };
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
@@ -99,6 +100,16 @@ export default function reducer(state = initialState, action) {
       return { ...state, loader: false, newsById: payload };
 
     case "GET_NEWS_FAILURE_BY_ID":
+      return { ...state, loader: false };
+
+    //! SEARCH PRODUCT
+    case "GET_SEARCH_PRODUCT_REQUEST":
+      return { ...state, loader: true };
+
+    case "GET_SEARCH_PRODUCT_SUCCESS":
+      return { ...state, loader: false, SearchProducts: payload };
+
+    case "GET_SEARCH_PRODUCT_FAILURE":
       return { ...state, loader: false };
 
     case "SET_SEARCH_QUERY":

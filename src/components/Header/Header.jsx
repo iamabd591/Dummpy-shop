@@ -1,5 +1,5 @@
 import "./Header.css";
-import React from "react";
+import React, { useEffect } from "react";
 import {} from "react-icons/io";
 import { BiPhoneCall } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
@@ -23,9 +23,17 @@ import {
   IoMdHelpCircleOutline,
   IoIosArrowDown,
 } from "react-icons/io";
-import DropDown from "../DropDown/DropDown";
+import { useDispatch, useSelector } from "react-redux";
+import { getSearchProduct } from "../../redux/action";
+// import DropDown from "../DropDown/DropDown";
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const searchProduct = useSelector((state) => state?.SearchProducts);
+  useEffect(() => {
+    dispatch(getSearchProduct());
+  }, [dispatch]);
+  console.log(searchProduct);
   return (
     <>
       <div className="header">
@@ -59,7 +67,7 @@ const Header = () => {
           </div>
           <div className="header-languages">
             <div>
-              <DropDown />
+              {/* <DropDown /> */}
               <p>
                 <IoIosArrowDown />
               </p>

@@ -1,6 +1,7 @@
 import { reject, request, success } from "./builder";
-import { getRequest, getRequestById } from "../utils/utils";
+import { getRequest, getRequestById, getRequestByName } from "../utils/utils";
 
+//! DUMMY API
 export const ThemeChanger = (value) => async (dispatch) => {
   dispatch({
     type: "ThemeChanger",
@@ -22,34 +23,6 @@ export const getProducts = (_) => async (dispatch) => {
   }
 };
 
-export const getFakeAPIProducts = () => async (dispatch) => {
-  dispatch(request({ type: "GET_FAKE_PRODUCTS_REQUEST" }));
-  try {
-    const fakeProduts = await getRequest({
-      url: "https://fakestoreapi.com/products",
-    });
-    // console.log(fakeProduts);
-    dispatch(
-      success({ type: "GET_FAKE_PRODUCTS_SUCCESS", payload: fakeProduts })
-    );
-  } catch (error) {
-    dispatch(reject({ type: "GET_FAKE_PRODUCTS_FAILURE", error: error }));
-  }
-};
-
-export const getNEWS = () => async (dispatch) => {
-  dispatch(request({ type: "GET_NEWS_REQUEST" }));
-  try {
-    const news = await getRequest({
-      url: "https://newsdata.io/api/1/news?apikey=pub_53638c8b3827b0ca2fac344e31b31b7c8f3f7&q=amazon&country=us&category=business",
-    });
-    // console.log(news);
-    dispatch(success({ type: "GET_NEWS_SUCCESS", payload: news }));
-  } catch (error) {
-    dispatch(reject({ type: "GET_NEWS_FAILURE", error: error }));
-  }
-};
-
 export const getProductsById = (id) => async (dispatch) => {
   dispatch(request({ type: "GET_PRODUCTS_REQUEST_BY_ID" }));
   try {
@@ -66,6 +39,36 @@ export const getProductsById = (id) => async (dispatch) => {
   }
 };
 
+export const getSearchProduct = (name) => async (dispatch) => {
+  dispatch(request({ type: "GET_SEARCH_PRODUCT_REQUEST" }));
+  try {
+    const SearchProducts = await getRequestByName({
+      url: `https://dummyjson.com/products/search?q=${name}`,
+    });
+    console.log(SearchProducts);
+    dispatch(
+      success({ type: "GET_SEARCH_PRODUCT_SUCCESS", payload: SearchProducts })
+    );
+  } catch (error) {
+    dispatch(reject({ type: "GET_SEARCH_PRODUCT_FAILURE", error: error }));
+  }
+};
+
+//! FAKEAPI PRODUCTS
+export const getFakeAPIProducts = () => async (dispatch) => {
+  dispatch(request({ type: "GET_FAKE_PRODUCTS_REQUEST" }));
+  try {
+    const fakeProduts = await getRequest({
+      url: "https://fakestoreapi.com/products",
+    });
+    // console.log(fakeProduts);
+    dispatch(
+      success({ type: "GET_FAKE_PRODUCTS_SUCCESS", payload: fakeProduts })
+    );
+  } catch (error) {
+    dispatch(reject({ type: "GET_FAKE_PRODUCTS_FAILURE", error: error }));
+  }
+};
 export const getFakeAPIProductsByID = (id) => async (dispatch) => {
   dispatch(request({ type: "GET_FAKE_PRODUCTS_REQUEST_BY_ID" }));
   try {
@@ -80,6 +83,20 @@ export const getFakeAPIProductsByID = (id) => async (dispatch) => {
     );
   } catch (error) {
     dispatch(reject({ type: "GET_FAKE_PRODUCTS_FAILURE_BY_ID", error: error }));
+  }
+};
+
+//! NEWS API
+export const getNEWS = () => async (dispatch) => {
+  dispatch(request({ type: "GET_NEWS_REQUEST" }));
+  try {
+    const news = await getRequest({
+      url: "https://newsdata.io/api/1/news?apikey=pub_53638c8b3827b0ca2fac344e31b31b7c8f3f7&q=amazon&country=us&category=business",
+    });
+    // console.log(news);
+    dispatch(success({ type: "GET_NEWS_SUCCESS", payload: news }));
+  } catch (error) {
+    dispatch(reject({ type: "GET_NEWS_FAILURE", error: error }));
   }
 };
 
@@ -100,6 +117,8 @@ export const getNEWSByID = (id) => async (dispatch) => {
     dispatch(reject({ type: "GET_NEWS_FAILURE_BY_ID", error: error }));
   }
 };
+
+//! SEARCH QUERY
 
 export const searchQuery = (query) => ({
   type: "SET_SEARCH_QUERY",
