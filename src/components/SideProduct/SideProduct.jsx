@@ -51,7 +51,7 @@ const SideProduct = () => {
           )}
         </p>
         <p className="description">{products?.description}</p>
-        <div className="buttons">
+        <div className="left-Side-buttons">
           <div className="wish-list">
             <p>
               <CiHeart />
