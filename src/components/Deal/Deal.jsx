@@ -8,17 +8,27 @@ import ProductContainer from "../ProductContainer/ProductContainer";
 
 const Deal = () => {
   const [search, setSearch] = useState("");
-  const dispath = useDispatch();
-  dispath(searchQuery(search));
+  const dispatch = useDispatch();
+  dispatch(searchQuery(search));
+
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0,
   });
+
   useEffect(() => {
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 15);
+    const storedDate = localStorage.getItem("targetDate");
+    let targetDate;
+
+    if (storedDate) {
+      targetDate = new Date(storedDate);
+    } else {
+      targetDate = new Date();
+      targetDate?.setDate(targetDate?.getDate() + 15);
+      localStorage?.setItem("targetDate", targetDate);
+    }
 
     const calculateTimeLeft = () => {
       const now = new Date();
@@ -26,22 +36,23 @@ const Deal = () => {
 
       if (difference > 0) {
         const timeLeftObj = {
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
+          days: Math?.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math?.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math?.floor((difference / 1000 / 60) % 60),
+          seconds: Math?.floor((difference / 1000) % 60),
         };
         setTimeLeft(timeLeftObj);
       } else {
+        localStorage?.clear();
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       }
     };
 
-    const timerInterval = setInterval(() => {
-      calculateTimeLeft();
-    }, 1000);
+    calculateTimeLeft(); // Call immediately to set initial state
+    const timerInterval = setInterval(calculateTimeLeft, 1000);
     return () => clearInterval(timerInterval);
   }, []);
+
   return (
     <>
       <div className="heading">
@@ -61,10 +72,10 @@ const Deal = () => {
           maxLength={30}
           className="product-search"
           placeholder="Search for anything....."
-          onChange={(e) => setSearch(e?.target?.value)}
+          onChange={(e) => setSearch(e.target.value)}
         />
         <a href="#">
-          Browse all product
+          Browse all products
           <span>
             <IoIosArrowRoundForward />
           </span>
