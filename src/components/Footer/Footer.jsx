@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="footer-top-section">
             <div className="branding-section">
               <div className="footer-logo">
-                <img src="Logo.png" />
+                <img src="/Logo.png" />
               </div>
               <div className="footer-info">
                 <h4>Customer Support</h4>

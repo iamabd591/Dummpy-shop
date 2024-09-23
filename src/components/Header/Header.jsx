@@ -75,7 +75,7 @@ const Header = () => {
       <div className="header-lower">
         <div className="logo">
           <a href="/">
-            <img src="./Logo.png" alt="logo" />
+            <img src="/Logo.png" alt="logo" />
           </a>
         </div>
         <div className="search-bar">
