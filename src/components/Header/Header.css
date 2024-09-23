@@ -22,11 +22,11 @@
   align-items: center;
   justify-content: left;
 }
-.header-right > .header-iocns > p {
+.header-right > .header-icons > p {
   font-size: 15px;
   margin-right: 5px;
 }
-.header-right > .header-iocns > p > span {
+.header-right > .header-icons > p > span {
   margin: 10px;
   cursor: pointer;
 }
@@ -60,10 +60,10 @@
 /* .header-lower > .logo > a > img {
   width: 80%;
 } */
-.header-lower .serach-bar {
+.header-lower .search-bar {
   width: 40%;
 }
-.header-lower .serach-bar form .product-search {
+.header-lower .search-bar form .product-search {
   width: 100%;
   height: 50px;
   border: none;
@@ -71,7 +71,7 @@
   position: relative;
   padding-left: 10px;
 }
-.serach-bar form .searchBtn {
+.search-bar form .searchBtn {
   right: 1%;
   width: 50px;
   border: none;

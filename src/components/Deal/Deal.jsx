@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import SideProduct from "../SideProduct/SideProduct";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import ProductContainer from "../ProductContainer/ProductContainer";
+// import Header from "../../components/Header/Header";
 
 const Deal = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -35,12 +36,11 @@ const Deal = () => {
     const timerInterval = setInterval(() => {
       calculateTimeLeft();
     }, 1000);
-
-    // Clean up the interval on component unmount
     return () => clearInterval(timerInterval);
   }, []);
   return (
     <>
+      {/* <Header /> */}
       <div className="heading">
         <div>
           <h2>Best Deals</h2>

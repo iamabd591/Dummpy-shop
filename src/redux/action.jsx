@@ -100,3 +100,12 @@ export const getNEWSByID = (id) => async (dispatch) => {
     dispatch(reject({ type: "GET_NEWS_FAILURE_BY_ID", error: error }));
   }
 };
+
+export const searchQuery = (query) => ({
+  type: "SET_SEARCH_QUERY",
+  payload: query,
+});
+
+// export const filteredProduct = () => ({
+//   type: "FILTER_PRODUCT",
+// });

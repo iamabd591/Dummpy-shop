@@ -1,40 +1,47 @@
 import "./ProductContainer.css";
 import Rating from "react-rating";
 import { useEffect } from "react";
+import { getProducts } from "../../redux/action";
 import { useDispatch, useSelector } from "react-redux";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import { getFakeAPIProducts, getProducts } from "../../redux/action";
 
 const ProductContainer = () => {
+  const data = useSelector((state) => state?.products?.products);
+  const searchQuery = useSelector((state) => state?.searchQuery);
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.products);
+
   useEffect(() => {
     dispatch(getProducts());
-    // dispatch(getFakeAPIProducts());
   }, [dispatch]);
+
+  const filteredProducts = searchQuery
+    ? data?.filter((item) =>
+        item?.title?.toLowerCase()?.includes(searchQuery?.toLowerCase())
+      )
+    : data;
+
   return (
-    <>
-      <div className="product-card-main">
-        {data?.products?.map((item, ind) => (
+    <div className="product-card-main">
+      {filteredProducts?.length > 0 ? (
+        filteredProducts.map((item, ind) => (
           <div className="product-card" key={ind}>
             {item?.availabilityStatus === "In Stock" ? (
-              <p className="lable-sold">{item?.availabilityStatus}</p>
+              <p className="label-sold">{item?.availabilityStatus}</p>
             ) : (
-              <p className="lable-hot">{item?.availabilityStatus}</p>
+              <p className="label-hot">{item?.availabilityStatus}</p>
             )}
-            {/* <p className="lable-hot">HOT</p>*/}
+
             {item?.discountPercentage ? (
-              <p className="lable-discount">{item?.discountPercentage}% OFF</p>
+              <p className="label-discount">{item?.discountPercentage}% OFF</p>
             ) : (
-              <p>Not discount available</p>
+              <p>No discount available</p>
             )}
-            <p></p>
+
             <center className="image">
               <a
                 href={`/product-info/${item?.id}-${item?.title
                   .replace(/\s+/g, "-")
                   .toLowerCase()}`}
-                // href={`/product-info/${item?.id}`}
               >
                 <img
                   src={item?.thumbnail}
@@ -44,6 +51,7 @@ const ProductContainer = () => {
                 />
               </a>
             </center>
+
             <div className="star">
               <h6>Rating</h6>
               <span>
@@ -54,16 +62,17 @@ const ProductContainer = () => {
                   readonly={true}
                 />
               </span>
-              {/* <span>{countReviewsForProduct(item.reviews, item.id)}</span> */}
             </div>
+
             <div className="title">
               <p>{item?.title}</p>
             </div>
+
             <div className="price">
               <h6>Price</h6>
               <p>${item?.price}</p>
               <span>
-                {item && item?.price && item?.discountPercentage ? (
+                {item?.discountPercentage ? (
                   `$${(
                     item?.price -
                     item?.price * (item?.discountPercentage / 100)
@@ -74,9 +83,11 @@ const ProductContainer = () => {
               </span>
             </div>
           </div>
-        ))}
-      </div>
-    </>
+        ))
+      ) : (
+        <p>No Product is Available</p>
+      )}
+    </div>
   );
 };
 

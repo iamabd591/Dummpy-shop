@@ -13,7 +13,7 @@
   border: 1px solid #eae8e8;
 }
 
-.lable-sold {
+.label-sold {
   width: 80px;
   padding: 5px;
   height: 24px;
@@ -22,7 +22,7 @@
   text-align: center;
   background-color: #035011;
 }
-.lable-hot {
+.label-hot {
   width: 80px;
   height: 24px;
   padding: 2px;
@@ -31,7 +31,7 @@
   text-align: center;
   background-color: #ae0606;
 }
-.lable-discount {
+.label-discount {
   width: 100px;
   height: 24px;
   padding: 2px;

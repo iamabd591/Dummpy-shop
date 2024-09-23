@@ -1,5 +1,5 @@
 import "./Header.css";
-import React from "react";
+import React, { useState } from "react";
 import {} from "react-icons/io";
 import { BiPhoneCall } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
@@ -23,16 +23,28 @@ import {
   IoMdHelpCircleOutline,
   IoIosArrowDown,
 } from "react-icons/io";
+import { useDispatch } from "react-redux";
+import { searchQuery } from "../../redux/action";
+
 const Header = () => {
+  const [search, setSearch] = useState("");
+  const dispatch = useDispatch();
+  const handleSearch = (e) => {
+    e.preventDefault();
+    console.log(search);
+    dispatch(searchQuery(search));
+    // dispatch(filteredProduct());
+  };
+
   return (
     <>
       <div className="header">
         <div className="text">
-          <p>Welcome to Clicon online e commerece store</p>
+          <p>Welcome to Clicon online e-commerce store</p>
         </div>
 
         <div className="header-right">
-          <div className="header-iocns">
+          <div className="header-icons">
             <p>
               Follow us on
               <span>
@@ -77,16 +89,18 @@ const Header = () => {
             <img src="./Logo.png" alt="logo" />
           </a>
         </div>
-        <div className="serach-bar">
-          <form action="">
+        <div className="search-bar">
+          <form onSubmit={handleSearch}>
+            {" "}
             <input
               type="text"
-              placeholder="Serach for anything....."
-              name="serach"
-              max={30}
+              name="search"
+              maxLength={30}
               className="product-search"
+              placeholder="Search for anything....."
+              onChange={(e) => setSearch(e?.target?.value)}
             />
-            <button className="searchBtn">
+            <button className="searchBtn" type="submit">
               <CiSearch />
             </button>
           </form>
@@ -108,13 +122,13 @@ const Header = () => {
       <div className="header-nav">
         <div className="user-nav">
           <ul className="user-nav-list">
-            <li href="">
+            <li>
               <p className="category">
                 ALL Category
                 <IoIosArrowDown />
               </p>
             </li>
-            <li href="">
+            <li>
               <p>
                 <span>
                   <CiLocationOn />
@@ -122,7 +136,7 @@ const Header = () => {
                 Track Order
               </p>
             </li>
-            <li href="">
+            <li>
               <p>
                 <span>
                   <IoIosGitCompare />
@@ -130,7 +144,7 @@ const Header = () => {
                 Compare
               </p>
             </li>
-            <li href="">
+            <li>
               <p>
                 <span>
                   <CiHeadphones />
@@ -138,7 +152,7 @@ const Header = () => {
                 Customer Support
               </p>
             </li>
-            <li href="">
+            <li>
               <p>
                 <span>
                   <IoMdHelpCircleOutline />
