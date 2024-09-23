@@ -1,11 +1,15 @@
 import "./Deal.css";
+import { useDispatch } from "react-redux";
+import { searchQuery } from "../../redux/action";
 import React, { useEffect, useState } from "react";
 import SideProduct from "../SideProduct/SideProduct";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import ProductContainer from "../ProductContainer/ProductContainer";
-// import Header from "../../components/Header/Header";
 
 const Deal = () => {
+  const [search, setSearch] = useState("");
+  const dispath = useDispatch();
+  dispath(searchQuery(search));
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -40,7 +44,6 @@ const Deal = () => {
   }, []);
   return (
     <>
-      {/* <Header /> */}
       <div className="heading">
         <div>
           <h2>Best Deals</h2>
@@ -52,6 +55,14 @@ const Deal = () => {
             </span>
           </p>
         </div>
+        <input
+          type="text"
+          name="search"
+          maxLength={30}
+          className="product-search"
+          placeholder="Search for anything....."
+          onChange={(e) => setSearch(e?.target?.value)}
+        />
         <a href="#">
           Browse all product
           <span>

@@ -35,7 +35,6 @@ const initialState = {
   news: [],
   newsById: {},
   searchQuery: "",
-  filteredProduct: [],
 };
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
@@ -108,16 +107,6 @@ export default function reducer(state = initialState, action) {
         searchQuery: action?.payload,
       };
 
-    // case "FILTER_PRODUCT":
-    //   const filtered = state?.products?.filter((product) =>
-    //     product?.title
-    //       ?.toLowerCase()
-    //       ?.includes(state?.searchQuery?.toLowerCase())
-    //   );
-    //   return {
-    //     ...state,
-    //     filteredProduct: filtered,
-    //   };
     default:
       return state;
   }

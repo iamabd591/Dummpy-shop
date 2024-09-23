@@ -38,3 +38,21 @@
   justify-content: center;
   background-color: #fff;
 }
+.heading .product-search {
+  width: 40%;
+  height: 60px;
+  outline: none;
+  padding-left: 10px;
+  position: relative;
+  border: 1px solid #ececec;
+}
+.heading .search-bar .searchBtn {
+  right: 1%;
+  width: 50px;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #000;
+  position: absolute;
+  background: transparent;
+}

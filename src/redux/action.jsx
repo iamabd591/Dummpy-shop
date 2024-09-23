@@ -105,7 +105,3 @@ export const searchQuery = (query) => ({
   type: "SET_SEARCH_QUERY",
   payload: query,
 });
-
-// export const filteredProduct = () => ({
-//   type: "FILTER_PRODUCT",
-// });

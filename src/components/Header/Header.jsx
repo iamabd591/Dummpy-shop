@@ -1,5 +1,5 @@
 import "./Header.css";
-import React, { useState } from "react";
+import React from "react";
 import {} from "react-icons/io";
 import { BiPhoneCall } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
@@ -23,19 +23,8 @@ import {
   IoMdHelpCircleOutline,
   IoIosArrowDown,
 } from "react-icons/io";
-import { useDispatch } from "react-redux";
-import { searchQuery } from "../../redux/action";
 
 const Header = () => {
-  const [search, setSearch] = useState("");
-  const dispatch = useDispatch();
-  const handleSearch = (e) => {
-    e.preventDefault();
-    console.log(search);
-    dispatch(searchQuery(search));
-    // dispatch(filteredProduct());
-  };
-
   return (
     <>
       <div className="header">
@@ -90,15 +79,13 @@ const Header = () => {
           </a>
         </div>
         <div className="search-bar">
-          <form onSubmit={handleSearch}>
-            {" "}
+          <form>
             <input
               type="text"
               name="search"
               maxLength={30}
               className="product-search"
               placeholder="Search for anything....."
-              onChange={(e) => setSearch(e?.target?.value)}
             />
             <button className="searchBtn" type="submit">
               <CiSearch />
