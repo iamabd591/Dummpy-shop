@@ -36,12 +36,11 @@
   background-color: #fff;
 }
 .header-languages {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  width: 50px;
+  /* display: flex; */
 }
 .header-languages > div > p {
-  margin-right: 20px;
+  display: inline;
 }
 
 .header-lower {

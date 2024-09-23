@@ -23,6 +23,7 @@ import {
   IoMdHelpCircleOutline,
   IoIosArrowDown,
 } from "react-icons/io";
+import DropDown from "../DropDown/DropDown";
 
 const Header = () => {
   return (
@@ -58,8 +59,9 @@ const Header = () => {
           </div>
           <div className="header-languages">
             <div>
+              <DropDown />
               <p>
-                Eng <IoIosArrowDown />
+                <IoIosArrowDown />
               </p>
             </div>
 
