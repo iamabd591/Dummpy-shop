@@ -21,7 +21,7 @@ const CustomeRoutes = () => {
           <Route path="/send-otp" element={<SendOTP />} />
           <Route path="/verify-otp" element={<VerifyOTP />} />
           <Route path="/reset-password" element={<NewPassword />} />
-          <Route path="/" element={<SearchedProduct />} />
+          <Route path="search-results" element={<SearchedProduct />} />
           <Route path="product-info/:id" element={<ProductDetails />} />
         </Route>
       </Routes>
