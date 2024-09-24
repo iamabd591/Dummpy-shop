@@ -45,7 +45,8 @@ export const getSearchProduct = (name) => async (dispatch) => {
     const SearchProducts = await getRequestByName({
       url: `https://dummyjson.com/products/search?q=${name}`,
     });
-    console.log(SearchProducts);
+    // console.log(name);
+    // console.log(SearchProducts);
     dispatch(
       success({ type: "GET_SEARCH_PRODUCT_SUCCESS", payload: SearchProducts })
     );

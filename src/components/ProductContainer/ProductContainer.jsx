@@ -56,8 +56,8 @@ const ProductContainer = () => {
               <h6>Rating</h6>
               <span>
                 <Rating
-                  emptySymbol={<AiOutlineStar size={18} color="#ffd700" />}
-                  fullSymbol={<AiFillStar size={18} color="#ffd700" />}
+                  emptySymbol={<AiOutlineStar size={18} color="#ff9d00" />}
+                  fullSymbol={<AiFillStar size={18} color="#ff9d00" />}
                   initialRating={item?.rating}
                   readonly={true}
                 />

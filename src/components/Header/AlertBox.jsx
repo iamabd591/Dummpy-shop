@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import "./Header.css";
 
 const AlertBox = ({ message, onClose }) => {

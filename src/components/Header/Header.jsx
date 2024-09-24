@@ -1,10 +1,9 @@
 import "./Header.css";
-import {} from "react-icons/io";
-import aletbox from "./alertbox";
+import AlertBox from "./AlertBox";
+import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { BiPhoneCall } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
-import React, { useEffect, useState } from "react";
 import {
   FaFacebook,
   FaDiscord,
@@ -25,33 +24,25 @@ import {
   IoMdHelpCircleOutline,
   IoIosArrowDown,
 } from "react-icons/io";
-import { getSearchProduct } from "../../redux/action";
-import { useDispatch, useSelector } from "react-redux";
-import AlertBox from "./alertbox";
+
 // import DropDown from "../DropDown/DropDown";
 
 const Header = () => {
-  const dispatch = useDispatch();
   const navigation = useNavigate();
   const [search, setSearchQuery] = useState("");
-  const [showAlert, setShowAlert] = useState(false); // Manage alert visibility
-  const searchProduct = useSelector((state) => state?.SearchProducts);
-
-  useEffect(() => {
-    dispatch(getSearchProduct());
-  }, [dispatch]);
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!search) {
-      setShowAlert(true); // Show the alert box if the search input is empty
+      setShowAlert(true);
     } else {
       navigation(`/search-results?query=${encodeURIComponent(search)}`);
     }
   };
 
   const closeAlert = () => {
-    setShowAlert(false); // Hide the alert box when the close button is clicked
+    setShowAlert(false);
   };
   return (
     <>

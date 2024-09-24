@@ -6,3 +6,96 @@
   justify-content: center;
   background-color: #fff;
 }
+.no-searchProduct-main > img {
+  height: 400px;
+}
+
+.query-product-heading {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  font-size: 18px;
+  text-align: left;
+  background-color: #ffffff;
+}
+.query-product-main {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+.query-results-card {
+  width: 100%;
+  margin: 10px;
+  height: 300px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  justify-content: center;
+  background-color: #f4f4f4;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.query-results-card .image {
+  width: 20%;
+  height: 100%;
+}
+.query-results-card .image > img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: transparent;
+}
+.query-product-result {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+}
+.query-product-result > .title {
+  width: 100%;
+  height: 50px;
+}
+.query-product-result > .title h2 {
+  font-size: 26px;
+  text-align: left;
+  font-weight: 700;
+}
+.query-product-result .description {
+  width: 100%;
+  height: 50px;
+}
+.query-product-result .description p {
+  color: #000;
+  font-size: 14px;
+  text-align: justify;
+}
+.query-product-button {
+  width: 40%;
+  height: 60px;
+  display: flex;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.query-product-button button {
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: #208cff;
+}
+.query-product-other-details {
+  width: 100%;
+  height: 50px;
+}
+.query-product-other-details .star {
+  font-size: 16px;
+  margin-top: 10px;
+}
+.query-product-other-details .price {
+  height: 50px;
+  margin-top: 10px;
+}
