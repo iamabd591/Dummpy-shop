@@ -25,8 +25,6 @@ import {
   IoIosArrowDown,
 } from "react-icons/io";
 
-// import DropDown from "../DropDown/DropDown";
-
 const Header = () => {
   const navigation = useNavigate();
   const [search, setSearchQuery] = useState("");

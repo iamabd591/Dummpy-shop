@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
 import Rating from "react-rating";
-
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { getSearchProduct } from "../../redux/action";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,12 +11,16 @@ const UserSearchedProduct = () => {
   const query = useQuery();
   const dispatch = useDispatch();
   const searchTerm = query?.get("query");
-  const searchProduct = useSelector((state) => state?.SearchProducts?.products);
-  console.log(searchTerm);
+
+  console.log(searchTerm); // Check if searchTerm is being updated correctly
 
   useEffect(() => {
-    dispatch(getSearchProduct(searchTerm));
-  }, [dispatch]);
+    if (searchTerm) {
+      dispatch(getSearchProduct(searchTerm));
+    }
+  }, [dispatch, searchTerm]); // The effect will run when either dispatch or searchTerm changes
+
+  const searchProduct = useSelector((state) => state?.SearchProducts?.products);
 
   console.log(searchProduct);
   return (
