@@ -168,3 +168,93 @@ ul li p span {
   margin-top: 10px;
   padding: 5px 10px;
 }
+.user-nav {
+  position: relative;
+}
+
+.user-nav-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-nav-list li {
+  margin-right: 20px;
+}
+
+.user-nav-list .category {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+}
+
+.user-nav-list .category:hover {
+  color: #007bff; /* Add a subtle hover color */
+}
+
+.user-nav-list .category svg {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.user-nav-list .category:hover svg {
+  transform: rotate(180deg); /* Rotate the arrow when hovering */
+}
+
+.category-dropdown {
+  left: 0;
+  top: 40px;
+  width: 150px;
+  display: none;
+  z-index: 1000;
+  padding: 10px 0;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.user-nav-list .category:hover .category-dropdown {
+  display: block; /* Show on hover */
+}
+
+.category-dropdown li {
+  padding: 8px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.category-dropdown li:hover {
+  background-color: #f8f9fa; /* Light hover background */
+}
+
+.category-dropdown li a {
+  color: #333;
+  display: block;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.category-dropdown li a:hover {
+  color: #007bff; /* Hover color for links */
+}
+
+/* Optional: Add animation */
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.category-dropdown {
+  animation: dropdownSlide 0.3s ease;
+}

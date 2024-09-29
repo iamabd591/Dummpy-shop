@@ -36,6 +36,7 @@ const initialState = {
   newsById: {},
   searchQuery: "",
   SearchProducts: [],
+  categories: [],
 };
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
@@ -81,6 +82,15 @@ export default function reducer(state = initialState, action) {
       return { ...state, loader: false, fakeApiProductByID: payload };
 
     case "GET_FAKE_PRODUCTS_FAILURE_BY_ID":
+      return { ...state, loader: false };
+
+    case "GET_CATEGORIES_REQUEST":
+      return { ...state, loader: true };
+
+    case "GET_CATEGORIES_SUCCESS":
+      return { ...state, loader: false, categories: payload };
+
+    case "GET_CATEGORIES_FAILURE":
       return { ...state, loader: false };
 
     //! News API

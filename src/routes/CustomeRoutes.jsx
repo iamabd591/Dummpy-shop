@@ -1,11 +1,12 @@
 import React from "react";
 import App from "../pages/App";
 import Home from "../pages/Home/Home";
-import SignUp from "../pages/UserAuthenticate/SignUp/SignUp";
 import SignIn from "../pages/UserAuthenticate/SignIn/SignIn";
+import SignUp from "../pages/UserAuthenticate/SignUp/SignUp";
+import CategoryPage from "../pages/CategoryPage/CategoryPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SearchedProduct from "../pages/SearchProducts/SearchProduct";
 import ProductDetails from "../pages/ProductDetails/ProductDetails";
+import SearchedProduct from "../pages/SearchProducts/SearchProduct";
 import SendOTP from "../pages/UserAuthenticate/ForgotPassword/SendOTP/SendOTP";
 import VerifyOTP from "../pages/UserAuthenticate/ForgotPassword/VerifyOTP/VerifyOTP";
 import NewPassword from "../pages/UserAuthenticate/ForgotPassword/NewPassword/NewPassword";
@@ -22,6 +23,10 @@ const CustomeRoutes = () => {
           <Route path="/verify-otp" element={<VerifyOTP />} />
           <Route path="/reset-password" element={<NewPassword />} />
           <Route path="search-results" element={<SearchedProduct />} />
+          <Route
+            path="/products/category/:categoryName"
+            element={<CategoryPage />}
+          />
           <Route path="product-info/:id" element={<ProductDetails />} />
         </Route>
       </Routes>

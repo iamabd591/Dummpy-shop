@@ -87,6 +87,18 @@ export const getFakeAPIProductsByID = (id) => async (dispatch) => {
   }
 };
 
+export const getCategories = () => async (dispatch) => {
+  dispatch(request({ type: "GET_CATEGORIES_REQUEST" }));
+  try {
+    const categories = await getRequest({
+      url: "https://fakestoreapi.com/products/categories",
+    });
+    dispatch(success({ type: "GET_CATEGORIES_SUCCESS", payload: categories }));
+  } catch (error) {
+    dispatch({ type: "GET_CATEGORIES_FAILURE", error: error });
+  }
+};
+
 //! NEWS API
 export const getNEWS = () => async (dispatch) => {
   dispatch(request({ type: "GET_NEWS_REQUEST" }));

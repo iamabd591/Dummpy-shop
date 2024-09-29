@@ -1,6 +1,6 @@
 import "./Header.css";
 import AlertBox from "./AlertBox";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { BiPhoneCall } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
@@ -24,12 +24,22 @@ import {
   IoMdHelpCircleOutline,
   IoIosArrowDown,
 } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+import { getCategories } from "../../redux/action";
 
 const Header = () => {
+  const dispatch = useDispatch();
   const navigation = useNavigate();
   const [search, setSearchQuery] = useState("");
   const [showAlert, setShowAlert] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const category = useSelector((state) => state?.categories);
 
+  useEffect(() => {
+    dispatch(getCategories());
+  }, []);
+
+  // console.log(category);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!search) {
@@ -136,9 +146,21 @@ const Header = () => {
         <div className="user-nav">
           <ul className="user-nav-list">
             <li>
-              <p className="category">
+              <p
+                className="category"
+                onClick={() => setShowDropdown((prev) => !prev)}
+              >
                 ALL Category
                 <IoIosArrowDown />
+                {showDropdown && (
+                  <ul className="category-dropdown">
+                    {category?.map((cat, index) => (
+                      <li key={index}>
+                        <a href={`/products/category/${cat}`}>{cat}</a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </p>
             </li>
             <li>
