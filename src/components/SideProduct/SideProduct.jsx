@@ -47,7 +47,7 @@ const SideProduct = () => {
               products?.price * (products?.discountPercentage / 100)
             ).toFixed(1)}`
           ) : (
-            <p>No discount available</p>
+            <span>No discount available</span>
           )}
         </p>
         <p className="description">{products?.description}</p>

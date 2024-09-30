@@ -83,20 +83,18 @@ const Header = () => {
               </span>
             </p>
           </div>
-          <div className="header-languages">
-            <div>
-              {/* <DropDown /> */}
-              <p>
-                <IoIosArrowDown />
-              </p>
-            </div>
-
-            <div>
-              <p>
-                PKR <IoIosArrowDown />
-              </p>
-            </div>
+          {/* <div className="header-languages">
+            <p>
+              Eng
+              <IoIosArrowDown />
+            </p>
           </div>
+
+          <div className="header-currency">
+            <p>
+              PKR <IoIosArrowDown />
+            </p>
+          </div> */}
         </div>
       </div>
 

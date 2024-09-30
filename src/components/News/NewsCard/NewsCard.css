@@ -51,14 +51,14 @@
   width: 33%;
   height: 100%;
 }
-.news-icons > div > p {
+.news-icons > p {
   color: #000;
   margin-top: 8px;
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
   text-transform: capitalize;
 }
-.news-icons > div > p > span {
+.news-icons > p > span {
   font-size: 14px;
   color: #fa8232;
   margin-left: 10px;

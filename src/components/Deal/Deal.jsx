@@ -7,7 +7,8 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import ProductContainer from "../ProductContainer/ProductContainer";
 
 const Deal = () => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(false);
+
   const dispatch = useDispatch();
   dispatch(searchQuery(search));
 
@@ -19,7 +20,7 @@ const Deal = () => {
   });
 
   useEffect(() => {
-    const storedDate = localStorage.getItem("targetDate");
+    const storedDate = localStorage?.getItem("targetDate");
     let targetDate;
 
     if (storedDate) {
@@ -48,7 +49,7 @@ const Deal = () => {
       }
     };
 
-    calculateTimeLeft(); // Call immediately to set initial state
+    calculateTimeLeft();
     const timerInterval = setInterval(calculateTimeLeft, 1000);
     return () => clearInterval(timerInterval);
   }, []);
@@ -61,8 +62,8 @@ const Deal = () => {
           <p>
             Deals end in{" "}
             <span>
-              {timeLeft.days}d:{timeLeft.hours}h:{timeLeft.minutes}m:
-              {timeLeft.seconds}s
+              {timeLeft?.days}d:{timeLeft?.hours}h:{timeLeft?.minutes}m:
+              {timeLeft?.seconds}s
             </span>
           </p>
         </div>

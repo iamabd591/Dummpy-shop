@@ -37,10 +37,9 @@
 }
 .header-languages {
   width: 50px;
-  /* display: flex; */
 }
-.header-languages > div > p {
-  display: inline;
+.header-currency {
+  width: 50px;
 }
 
 .header-lower {

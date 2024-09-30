@@ -13,12 +13,20 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { FaCircleArrowLeft, FaCircleArrowRight } from "react-icons/fa6";
 const Product = () => {
   const { id } = useParams();
-  const productId = id.split("-")[0];
-  console.log(productId);
   const dispatch = useDispatch();
+  const productId = id?.split("-")[0];
   const [rating, setRating] = useState(0);
-  const ProdcutById = useSelector((state) => state.productById);
-  const loader = useSelector((state) => state.loader);
+  const [counter, setCounter] = useState(0);
+  const ProdcutById = useSelector((state) => state?.productById);
+
+  const decrementCounter = () => {
+    if (counter > 0) {
+      setCounter(counter - 1);
+    }
+  };
+  const incrementCounter = () => {
+    setCounter(counter + 1);
+  };
 
   const handleRating = (rating) => {
     setRating(rating);
@@ -31,10 +39,6 @@ const Product = () => {
     dispatch(getProductsById(productId));
   }, [dispatch, productId]);
 
-  useEffect(() => {
-    console.log(loader);
-  }, [loader]);
-  console.log(ProdcutById);
   return (
     <>
       <div className="product-details-main">
@@ -108,7 +112,7 @@ const Product = () => {
                         (ProdcutById?.discountPercentage / 100)
                     ).toFixed(2)}`
                   ) : (
-                    <p>No discount available</p>
+                    <span>No discount available</span>
                   )}
                 </p>
               </div>
@@ -165,12 +169,12 @@ const Product = () => {
             </div>
             <div className="buttons">
               <div className="counterBtn">
-                <button>
+                <button onClick={decrementCounter}>
                   {" "}
                   <FiMinus />
                 </button>
-                <span>00</span>
-                <button>
+                <span>{counter?.toString()?.padStart(2, "0")}</span>
+                <button onClick={incrementCounter}>
                   <GoPlus />
                 </button>
               </div>
