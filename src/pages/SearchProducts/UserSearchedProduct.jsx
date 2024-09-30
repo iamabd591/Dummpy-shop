@@ -1,6 +1,8 @@
+import "./SearchProducts.css";
 import Rating from "react-rating";
-import React, { useEffect } from "react";
+import Pagination from "./Pagination.jsx";
 import { useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import { getSearchProduct } from "../../redux/action";
 import { useDispatch, useSelector } from "react-redux";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
@@ -11,26 +13,29 @@ const UserSearchedProduct = () => {
   const query = useQuery();
   const dispatch = useDispatch();
   const searchTerm = query?.get("query");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postPerPage, setPostPerPage] = useState(10);
 
-  console.log(searchTerm); // Check if searchTerm is being updated correctly
-
+  // console.log(searchTerm);
   useEffect(() => {
     if (searchTerm) {
       dispatch(getSearchProduct(searchTerm));
     }
-  }, [dispatch, searchTerm]); // The effect will run when either dispatch or searchTerm changes
-
+  }, [dispatch, searchTerm]);
   const searchProduct = useSelector((state) => state?.SearchProducts?.products);
-
-  console.log(searchProduct);
+  const lastPageIndex = currentPage * postPerPage;
+  const firstPageIndex = lastPageIndex - postPerPage;
+  const currentData = searchProduct?.slice(firstPageIndex, lastPageIndex);
+  // console.log(currentData);
+  // console.log(ProductLenght);
   return (
     <>
       <h1 className="query-product-heading">
         Search Results for: {searchTerm}
       </h1>
       <div className="query-product-main">
-        {searchProduct?.length > 0 ? (
-          searchProduct?.map((item, ind) => (
+        {currentData?.length > 0 ? (
+          currentData?.map((item, ind) => (
             <div className="query-results-card" key={ind}>
               <div className="image">
                 <img src={item?.thumbnail} alt={item?.title} />
@@ -86,6 +91,13 @@ const UserSearchedProduct = () => {
           </div>
         )}
       </div>
+      <Pagination
+        className="pagination-main"
+        totalPosts={searchProduct?.length}
+        postPerPage={postPerPage}
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+      />
     </>
   );
 };
