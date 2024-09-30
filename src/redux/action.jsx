@@ -152,3 +152,18 @@ export const searchQuery = (query) => ({
   type: "SET_SEARCH_QUERY",
   payload: query,
 });
+
+//! ADD REMOVE CART PRODUCTS
+export const addToCart = (product) => {
+  return {
+    type: "ADD_TO_CART",
+    payload: product,
+  };
+};
+
+export const removeToCart = (productId) => {
+  return {
+    type: "REMOVE_TO_PRODUCT",
+    payload: productId,
+  };
+};

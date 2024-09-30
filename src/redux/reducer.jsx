@@ -38,7 +38,8 @@ const initialState = {
   SearchProducts: [],
   categories: [],
   categoriesProducts: [],
-  addToCart: "",
+  cartItems: [],
+  cartCount: 0,
 };
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
@@ -139,6 +140,36 @@ export default function reducer(state = initialState, action) {
         searchQuery: action?.payload,
       };
 
+    //! CART ITEMS
+    case "ADD_TO_CART":
+      const itemExists = state?.cartItems?.find(
+        (item) => item?.id === action?.payload?.id
+      );
+      if (itemExists) {
+        return {
+          ...state,
+          cartItems: state?.cartItems?.map((item) =>
+            item?.id === action?.payload?.id
+              ? { ...item, qyt: item?.qyt + 1 }
+              : item
+          ),
+          cartCount: state?.cartCount + 1,
+        };
+      } else {
+        return {
+          ...state,
+          cartItems: [...state?.cartItems, { ...action?.payload, qyt: 1 }],
+          cartCount: state?.cartCount + 1,
+        };
+      }
+    case "REMOVE_TO_PRODUCT":
+      return {
+        ...state,
+        cartItems: state?.cartItems?.filter(
+          (item) => item?.id !== action?.payload.id
+        ),
+        cartCount: state?.cartCount - 1,
+      };
     default:
       return state;
   }
