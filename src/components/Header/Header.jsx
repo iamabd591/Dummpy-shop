@@ -129,6 +129,7 @@ const Header = () => {
         <div className="user-icons">
           <p>
             <CiShoppingCart />
+            <span>0</span>
           </p>
           <p>
             <CiHeart />
