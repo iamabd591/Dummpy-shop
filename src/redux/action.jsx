@@ -99,6 +99,21 @@ export const getCategories = () => async (dispatch) => {
   }
 };
 
+export const getCategoriesProducts = () => async (dispatch) => {
+  dispatch(request({ type: "GET_CATEGORIES_PRODUCTS_REQUEST" }));
+  try {
+    const categoriesProducts = await getRequest({
+      url: "https://fakestoreapi.com/products/category/jewelery",
+    });
+    dispatch({
+      type: "GET_CATEGORIES_PRODUCTS_SUCCESS",
+      payload: categoriesProducts,
+    });
+  } catch (error) {
+    dispatch({ type: "GET_CATEGORIES_PRODUCTS_FAILURE", error: error });
+  }
+};
+
 //! NEWS API
 export const getNEWS = () => async (dispatch) => {
   dispatch(request({ type: "GET_NEWS_REQUEST" }));

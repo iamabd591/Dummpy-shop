@@ -37,6 +37,7 @@ const initialState = {
   searchQuery: "",
   SearchProducts: [],
   categories: [],
+  categoriesProducts: [],
 };
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
@@ -90,7 +91,16 @@ export default function reducer(state = initialState, action) {
     case "GET_CATEGORIES_SUCCESS":
       return { ...state, loader: false, categories: payload };
 
-    case "GET_CATEGORIES_FAILURE":
+    case "GET_CATEGORIES_P_FAILURE":
+      return { ...state, loader: false };
+
+    case "GET_CATEGORIES_PRODUCTS_REQUEST":
+      return { ...state, loader: true };
+
+    case "GET_CATEGORIES_PRODUCTS_SUCCESS":
+      return { ...state, loader: false, categoriesProducts: payload };
+
+    case "GET_CATEGORIES_PRODUCTS_FAILURE":
       return { ...state, loader: false };
 
     //! News API
