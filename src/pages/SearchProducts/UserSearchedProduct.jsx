@@ -92,11 +92,10 @@ const UserSearchedProduct = () => {
         )}
       </div>
       <Pagination
-        className="pagination-main"
-        totalPosts={searchProduct?.length}
         postPerPage={postPerPage}
-        setCurrentPage={setCurrentPage}
         currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        totalPosts={searchProduct?.length}
       />
     </>
   );
