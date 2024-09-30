@@ -38,6 +38,7 @@ const initialState = {
   SearchProducts: [],
   categories: [],
   categoriesProducts: [],
+  addToCart: "",
 };
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
