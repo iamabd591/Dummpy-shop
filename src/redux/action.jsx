@@ -167,3 +167,10 @@ export const removeToCart = (productId) => {
     payload: productId,
   };
 };
+
+export const initilizeCart = (savedCart) => {
+  dispatch({
+    type: "INITILIZE_CART_COUNT",
+    payload: parseInt(savedCart, 10),
+  });
+};

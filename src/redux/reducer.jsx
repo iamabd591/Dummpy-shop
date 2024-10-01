@@ -170,6 +170,12 @@ export default function reducer(state = initialState, action) {
         ),
         cartCount: state?.cartCount - 1,
       };
+
+    case "INITILIZE_CART_COUNT":
+      return {
+        ...state,
+        cartCount: action?.payload,
+      };
     default:
       return state;
   }

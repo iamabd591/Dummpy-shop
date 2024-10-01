@@ -34,6 +34,9 @@ const Header = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
   const category = useSelector((state) => state?.categories);
+  const cartCounter = useSelector((state) => state?.cartCount);
+
+  console.log(cartCounter);
 
   useEffect(() => {
     dispatch(getCategories());
@@ -131,7 +134,7 @@ const Header = () => {
             <a href="/shopping-cart">
               <CiShoppingCart />
             </a>
-            <span>0</span>
+            <span>{cartCounter}</span>
           </p>
           <p>
             <CiHeart />

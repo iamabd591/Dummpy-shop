@@ -3,15 +3,22 @@ import Rating from "react-rating";
 import { CiHeart } from "react-icons/ci";
 import { IoEyeOutline } from "react-icons/io5";
 import { FiShoppingCart } from "react-icons/fi";
-import { getProducts } from "../../redux/action";
-import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import { addToCart, getProducts } from "../../redux/action";
+import React, { useEffect, useState, useCallback } from "react";
 
 const SideProduct = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state?.products);
+  const cartCounter = useSelector((state) => state?.cartCount);
+
   const [products, setProducts] = useState(null);
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch]);
+
   useEffect(() => {
     if (data?.products?.length > 0) {
       const index = Math.floor(Math.random() * data?.products?.length);
@@ -19,9 +26,15 @@ const SideProduct = () => {
       setProducts(selectedProduct);
     }
   }, [data]);
-  useEffect(() => {
-    dispatch(getProducts());
-  }, [dispatch]);
+
+  const handleCartCount = useCallback(() => {
+    if (products) {
+      dispatch(addToCart(products?.id));
+    }
+  }, [dispatch, products]);
+
+  console.log("Component Rendered", { cartCounter, products });
+
   return (
     <>
       <div className="left-container">
@@ -58,7 +71,7 @@ const SideProduct = () => {
             </p>
           </div>
           <div className="add-to-cart">
-            <button>
+            <button onClick={handleCartCount}>
               Add To Cart{" "}
               <span>
                 <FiShoppingCart />
@@ -76,4 +89,4 @@ const SideProduct = () => {
   );
 };
 
-export default SideProduct;
+export default React.memo(SideProduct);
