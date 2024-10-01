@@ -1,9 +1,3 @@
-import "./Header.css";
-import AlertBox from "./AlertBox";
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
-import { BiPhoneCall } from "react-icons/bi";
-import { FaXTwitter } from "react-icons/fa6";
 import {
   FaFacebook,
   FaDiscord,
@@ -24,8 +18,14 @@ import {
   IoMdHelpCircleOutline,
   IoIosArrowDown,
 } from "react-icons/io";
-import { useDispatch, useSelector } from "react-redux";
+import "./Header.css";
+import AlertBox from "./AlertBox";
+import { useNavigate } from "react-router";
+import { BiPhoneCall } from "react-icons/bi";
+import { FaXTwitter } from "react-icons/fa6";
 import { getCategories } from "../../redux/action";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -128,7 +128,9 @@ const Header = () => {
         </div>
         <div className="user-icons">
           <p>
-            <CiShoppingCart />
+            <a href="/shopping-cart">
+              <CiShoppingCart />
+            </a>
             <span>0</span>
           </p>
           <p>
@@ -145,7 +147,7 @@ const Header = () => {
         <div className="user-nav">
           <ul className="user-nav-list">
             <li>
-              <p
+              <span
                 className="category"
                 onClick={() => setShowDropdown((prev) => !prev)}
               >
@@ -160,7 +162,7 @@ const Header = () => {
                     ))}
                   </ul>
                 )}
-              </p>
+              </span>
             </li>
             <li>
               <p>

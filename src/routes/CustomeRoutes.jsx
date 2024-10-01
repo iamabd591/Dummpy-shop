@@ -1,6 +1,7 @@
 import React from "react";
 import App from "../pages/App";
 import Home from "../pages/Home/Home";
+import Cart from "../pages/Cart/Cart";
 import SignIn from "../pages/UserAuthenticate/SignIn/SignIn";
 import SignUp from "../pages/UserAuthenticate/SignUp/SignUp";
 import CategoryPage from "../pages/CategoryPage/CategoryPage";
@@ -20,6 +21,7 @@ const CustomeRoutes = () => {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/send-otp" element={<SendOTP />} />
+          <Route path="/shopping-cart" element={<Cart />} />
           <Route path="/verify-otp" element={<VerifyOTP />} />
           <Route path="/reset-password" element={<NewPassword />} />
           <Route path="search-results" element={<SearchedProduct />} />

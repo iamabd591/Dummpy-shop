@@ -1,0 +1,169 @@
+.cart-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  padding: 60px;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.cart-nain {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  border: 1px solid #cacdd1;
+}
+
+.cart-nain > h3 {
+  width: 100%;
+  height: 50px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.table-wrapper {
+  max-height: 700px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.table-container {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #cacdd1;
+}
+
+.table-heading {
+  top: 0;
+  z-index: 1;
+  height: 50px;
+  font-size: 16px;
+  padding: 5px 8px;
+  position: sticky;
+  color: #475156;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #e4e7e9;
+}
+
+.table-body {
+  height: 100px;
+  text-align: center;
+}
+
+.table-rows {
+  border-bottom: 1px solid #cacdd1;
+}
+.table-body > span {
+  font-size: 18px;
+  cursor: pointer;
+  color: #ff0404;
+  text-align: left !important;
+}
+
+.cell-one {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cell-one > img {
+  width: 150px;
+  height: 150px;
+}
+
+.cell-one > p {
+  width: 60%;
+  text-align: justify;
+}
+.cart-buttons {
+  display: flex;
+  padding: 12px 14px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.return-to-shop,
+.update-cart {
+  width: 180px;
+  height: 40px;
+  font-weight: 600;
+  color: #046dff;
+  border-radius: 3px;
+  transition: 0.5s ease-in;
+  background-color: #fff;
+  border: 1px solid #046dff;
+}
+.return-to-shop:hover,
+.update-cart:hover {
+  color: #fff;
+  border-color: #fff;
+  background-color: #046dff;
+}
+.cart-payment {
+  width: 25%;
+  height: 100%;
+  padding: 5px;
+  display: flex;
+  margin-left: 20px;
+  flex-direction: column;
+  border: 1px solid #cacdd1;
+}
+.cart-payment > h3 {
+  width: 100%;
+  height: 50px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.payment-card {
+  width: 100%;
+  height: 260px;
+  padding: 10px;
+  border: 1px solid #cacdd1;
+}
+.payment-price {
+  width: 100%;
+  width: 100%;
+}
+.payment-price > p {
+  display: flex;
+  font-size: 14px;
+  color: #cacdd1;
+  text-transform: capitalize;
+  justify-content: space-between;
+}
+.payment-price > p > span {
+  color: #000;
+}
+.coupon-card {
+  width: 100%;
+  height: 30%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #cacdd1;
+}
+.coupon-card h3 {
+  width: 100%;
+  height: 40px;
+  font-size: 25px;
+  font-weight: 600;
+}
+.coupon-card > input {
+  width: 100%;
+  height: 40px;
+  padding: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  border: 1px solid #cacdd1;
+}
+.coupon-card > button {
+  margin-top: 5px;
+  background-color: #046dff;
+}
