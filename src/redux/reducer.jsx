@@ -39,7 +39,7 @@ const initialState = {
   categories: [],
   categoriesProducts: [],
   cartItems: localStorage?.getItem("cartItems")
-    ? JSON.parse(localStorage.getItem("cartItems"))
+    ? JSON.parse(localStorage?.getItem("cartItems"))
     : [],
   cartCount: localStorage?.getItem("cartCounter")
     ? parseInt(localStorage?.getItem("cartCounter"), 10)

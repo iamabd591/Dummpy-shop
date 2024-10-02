@@ -7,15 +7,15 @@ const Slider = () => {
   return (
     <Fade>
       <div className="product-slider">
-        <div className="slider-card">
+        {/* <div className="slider-card">
           <div className="slider-image">
             <img src="/Image1.png" alt="Computer" />
             <div className="slider-text">
               <p>Computer</p>
             </div>
           </div>
-        </div>
-        <div className="slider-card">
+        </div> */}
+        {/* <div className="slider-card">
           <div className="slider-image">
             <img src="/Image2.png" alt="Mobile" />
             <div className="slider-text">
@@ -54,7 +54,7 @@ const Slider = () => {
               <p>Tv & Home</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </Fade>
   );

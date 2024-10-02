@@ -39,17 +39,17 @@ const SideProduct = () => {
 
   const handleCartCount = useCallback(() => {
     if (products) {
-      console.log("Dispatching product to cart:", products); // Log product
+      console.log("Dispatching product to cart:", products);
       dispatch(addToCart(products));
     }
   }, [dispatch, products]);
   console.log("Component Rendered", { cartCounter, cartProducts });
-  localStorage?.clear(cartCounter);
+  // localStorage?.clear(cartCounter);
 
-  const clearCart = () => {
-    localStorage.removeItem("cartCounter"); // Remove from localStorage
-    dispatch(initilizeCart(0)); // Reset the cart in Redux
-  };
+  // const clearCart = () => {
+  //   localStorage.removeItem("cartCounter");
+  //   dispatch(initilizeCart(0));
+  // };
 
   return (
     <>

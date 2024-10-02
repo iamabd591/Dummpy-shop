@@ -11,6 +11,7 @@ import SearchedProduct from "../pages/SearchProducts/SearchProduct";
 import SendOTP from "../pages/UserAuthenticate/ForgotPassword/SendOTP/SendOTP";
 import VerifyOTP from "../pages/UserAuthenticate/ForgotPassword/VerifyOTP/VerifyOTP";
 import NewPassword from "../pages/UserAuthenticate/ForgotPassword/NewPassword/NewPassword";
+import CheckOut from "../pages/CheckOut/CheckOut";
 
 const CustomeRoutes = () => {
   return (
@@ -21,6 +22,7 @@ const CustomeRoutes = () => {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/send-otp" element={<SendOTP />} />
+          <Route path="/checkout" element={<CheckOut />} />
           <Route path="/shopping-cart" element={<Cart />} />
           <Route path="/verify-otp" element={<VerifyOTP />} />
           <Route path="/reset-password" element={<NewPassword />} />

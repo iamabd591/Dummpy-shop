@@ -10,6 +10,7 @@ const UserCart = () => {
   let tax = 0;
 
   const cartProducts = useSelector((state) => state?.cartItems);
+  console.log(cartProducts);
 
   return (
     <>
@@ -129,7 +130,10 @@ const UserCart = () => {
                   ${(subTotal + shipping - discount + tax)?.toFixed(2)}
                 </span>
               </p>
-              <button>Proceed to Checkout</button>
+              <button className="payout-btn">
+                {" "}
+                <a href="./checkout">Proceed to Checkout</a>
+              </button>
             </div>
           </div>
           <div className="coupon-card">
