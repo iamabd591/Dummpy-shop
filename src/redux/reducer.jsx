@@ -38,8 +38,12 @@ const initialState = {
   SearchProducts: [],
   categories: [],
   categoriesProducts: [],
-  cartItems: [],
-  cartCount: 0,
+  cartItems: localStorage?.getItem("cartItems")
+    ? JSON.parse(localStorage.getItem("cartItems"))
+    : [],
+  cartCount: localStorage?.getItem("cartCounter")
+    ? parseInt(localStorage?.getItem("cartCounter"), 10)
+    : 0,
 };
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
@@ -141,41 +145,52 @@ export default function reducer(state = initialState, action) {
       };
 
     //! CART ITEMS
-    case "ADD_TO_CART":
-      const itemExists = state?.cartItems?.find(
-        (item) => item?.id === action?.payload?.id
+    case "ADD_TO_CART": {
+      const itemExists = state.cartItems.find(
+        (item) => item.id === action.payload.id
       );
+
       if (itemExists) {
+        const updatedItems = state.cartItems.map((item) =>
+          item.id === action.payload.id ? { ...item, qty: item.qty + 1 } : item
+        );
+
+        localStorage.setItem("cartItems", JSON.stringify(updatedItems)); // Update local storage
         return {
           ...state,
-          cartItems: state?.cartItems?.map((item) =>
-            item?.id === action?.payload?.id
-              ? { ...item, qyt: item?.qyt + 1 }
-              : item
-          ),
-          cartCount: state?.cartCount + 1,
+          cartItems: updatedItems,
+          cartCount: state.cartCount + 1,
         };
       } else {
+        const newItems = [...state.cartItems, { ...action.payload, qty: 1 }];
+        localStorage.setItem("cartItems", JSON.stringify(newItems)); // Update local storage
         return {
           ...state,
-          cartItems: [...state?.cartItems, { ...action?.payload, qyt: 1 }],
-          cartCount: state?.cartCount + 1,
+          cartItems: newItems,
+          cartCount: state.cartCount + 1,
         };
       }
-    case "REMOVE_TO_PRODUCT":
+    }
+
+    case "REMOVE_TO_PRODUCT": {
+      const updatedItems = state.cartItems.filter(
+        (item) => item.id !== action.payload.id
+      );
+
+      localStorage.setItem("cartItems", JSON.stringify(updatedItems)); // Update local storage
       return {
         ...state,
-        cartItems: state?.cartItems?.filter(
-          (item) => item?.id !== action?.payload.id
-        ),
-        cartCount: state?.cartCount - 1,
+        cartItems: updatedItems,
+        cartCount: state.cartCount - 1,
       };
+    }
 
     case "INITILIZE_CART_COUNT":
       return {
         ...state,
         cartCount: action?.payload,
       };
+
     default:
       return state;
   }

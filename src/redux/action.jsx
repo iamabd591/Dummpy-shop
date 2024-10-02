@@ -169,8 +169,8 @@ export const removeToCart = (productId) => {
 };
 
 export const initilizeCart = (savedCart) => {
-  dispatch({
+  return {
     type: "INITILIZE_CART_COUNT",
     payload: parseInt(savedCart, 10),
-  });
+  };
 };

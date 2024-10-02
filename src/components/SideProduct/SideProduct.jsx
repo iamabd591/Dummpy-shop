@@ -5,23 +5,33 @@ import { IoEyeOutline } from "react-icons/io5";
 import { FiShoppingCart } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import { addToCart, getProducts } from "../../redux/action";
 import React, { useEffect, useState, useCallback } from "react";
+import { addToCart, getProducts, initilizeCart } from "../../redux/action";
 
 const SideProduct = () => {
   const dispatch = useDispatch();
+  const [products, setProducts] = useState(null);
   const data = useSelector((state) => state?.products);
   const cartCounter = useSelector((state) => state?.cartCount);
-
-  const [products, setProducts] = useState(null);
+  const cartProducts = useSelector((state) => state?.cartItems);
 
   useEffect(() => {
+    const savedCartCount = localStorage?.getItem("cartCounter");
+    if (savedCartCount) {
+      dispatch(initilizeCart(savedCartCount));
+    }
     dispatch(getProducts());
   }, [dispatch]);
 
   useEffect(() => {
+    if (cartCounter !== undefined) {
+      localStorage.setItem("cartCounter", cartCounter);
+    }
+  }, [cartCounter]);
+
+  useEffect(() => {
     if (data?.products?.length > 0) {
-      const index = Math.floor(Math.random() * data?.products?.length);
+      const index = Math?.floor(Math?.random() * data?.products?.length);
       const selectedProduct = data?.products[index];
       setProducts(selectedProduct);
     }
@@ -29,11 +39,17 @@ const SideProduct = () => {
 
   const handleCartCount = useCallback(() => {
     if (products) {
-      dispatch(addToCart(products?.id));
+      console.log("Dispatching product to cart:", products); // Log product
+      dispatch(addToCart(products));
     }
   }, [dispatch, products]);
+  console.log("Component Rendered", { cartCounter, cartProducts });
+  localStorage?.clear(cartCounter);
 
-  console.log("Component Rendered", { cartCounter, products });
+  const clearCart = () => {
+    localStorage.removeItem("cartCounter"); // Remove from localStorage
+    dispatch(initilizeCart(0)); // Reset the cart in Redux
+  };
 
   return (
     <>
@@ -77,6 +93,10 @@ const SideProduct = () => {
                 <FiShoppingCart />
               </span>
             </button>
+
+            {/* <div className="clear-cart">
+              <button onClick={clearCart}>Clear Cart</button>
+            </div> */}
           </div>
           <div className="eye-view">
             <p>
