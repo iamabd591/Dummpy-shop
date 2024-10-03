@@ -20,7 +20,8 @@
   width: 70%;
   height: 100%;
   padding: 20px;
-  border: 1px solid #7d7d7d;
+  border-radius: 10px;
+  border: 1px solid #e6e5e5;
 }
 .lables {
   display: flex;
@@ -43,10 +44,10 @@
   width: 33%;
   height: 50px;
   padding: 12px;
-  font-size: 16px;
   outline: none;
-  border: 1px solid #dbdada;
+  font-size: 16px;
   color: #7d7d7d;
+  border: 1px solid #dbdada;
 }
 .addresslables {
   margin-top: 20px;
@@ -63,6 +64,20 @@
 }
 .addressInput > input {
   width: 100%;
+}
+
+.section-third {
+  margin-top: 20px;
+}
+.payment-option-section {
+  display: flex;
+  flex-direction: column;
+}
+.payment-option-section > h3 {
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  font-weight: bold;
 }
 .payment-total {
   width: 30%;

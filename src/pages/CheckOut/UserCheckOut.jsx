@@ -43,6 +43,29 @@ const UserCheckOut = () => {
                 placeholder="Your Address"
               />
             </div>
+            <div className="lables section-third">
+              <label htmlFor="">Country</label>
+              <label htmlFor="">Region/State</label>
+              <label htmlFor="">City</label>
+            </div>
+            <div className="inputs">
+              <input
+                required
+                type="text"
+                id="name"
+                placeholder="Your Country"
+              />
+              <input
+                required
+                type="email"
+                id="email"
+                placeholder="Your Region/State "
+              />
+              <input required type="text" id="number" placeholder="Your City" />
+            </div>
+            <div className="payment-option-section">
+              <h3>Payment Option</h3>
+            </div>
           </div>
           <div className="payment-total ">
             <h3>Order Summery</h3>
