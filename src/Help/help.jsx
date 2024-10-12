@@ -1,7 +1,7 @@
 import React from "react";
 
 const help = () => {
-  return <div>help</div>;
+  return <div className="">help</div>;
 };
 
 export default help;
